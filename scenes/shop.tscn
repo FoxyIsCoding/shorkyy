@@ -1,13 +1,23 @@
-[gd_scene load_steps=7 format=3 uid="uid://b33qvtfjfbp6m"]
+[gd_scene load_steps=9 format=3 uid="uid://b33qvtfjfbp6m"]
 
 [ext_resource type="Texture2D" uid="uid://c8m73f0i2txk8" path="res://assets/my majestic art made in MS paint lol/buttons ig/the majestic exit-close button/close.png" id="1_1l46r"]
 [ext_resource type="Script" uid="uid://or1egfj0q5pj" path="res://scripts/shop/main_controller.gd" id="1_032fp"]
 [ext_resource type="Texture2D" uid="uid://c3m2nt4h2ncsg" path="res://assets/my majestic art made in MS paint lol/buttons ig/the majestic exit-close button/close_pressed.png" id="2_032fp"]
 [ext_resource type="Texture2D" uid="uid://dyx2q4yen2jwh" path="res://assets/my majestic art made in MS paint lol/buttons ig/the majestic exit-close button/close_hover.png" id="3_2fc2m"]
 [ext_resource type="Texture2D" uid="uid://d1l5735yoyr52" path="res://assets/my majestic art made in MS paint lol/ui art/sillest cookie.png" id="5_2fc2m"]
+[ext_resource type="Texture2D" uid="uid://7w17uuum0dsg" path="res://assets/my majestic art made in MS paint lol/ui art/box.png" id="6_8r1wq"]
 
 [sub_resource type="SystemFont" id="SystemFont_2fc2m"]
 font_names = PackedStringArray("Cursive")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ajxib"]
+texture = ExtResource("6_8r1wq")
+texture_margin_left = 2.0
+texture_margin_top = 2.0
+texture_margin_right = 2.0
+texture_margin_bottom = 2.0
+axis_stretch_horizontal = 2
+axis_stretch_vertical = 2
 
 [node name="Shop" type="Control"]
 layout_mode = 3
@@ -59,16 +69,40 @@ theme_override_fonts/font = SubResource("SystemFont_2fc2m")
 theme_override_font_sizes/font_size = 165
 text = "69 Cookies"
 
-[node name="ScrollContainer" type="ScrollContainer" parent="."]
+[node name="extra" type="ScrollContainer" parent="."]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_top = 98.0
+offset_top = 279.0
 grow_horizontal = 2
 grow_vertical = 2
+horizontal_scroll_mode = 0
 
-[node name="HFlowContainer" type="HFlowContainer" parent="ScrollContainer"]
+[node name="horizontal_container" type="HFlowContainer" parent="extra"]
 layout_mode = 2
+size_flags_horizontal = 6
+alignment = 1
+last_wrap_alignment = 2
+
+[node name="item_pointer" type="Panel" parent="extra/horizontal_container"]
+custom_minimum_size = Vector2(1103.155, 150)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_ajxib")
+
+[node name="item_pointer2" type="Panel" parent="extra/horizontal_container"]
+custom_minimum_size = Vector2(1103.155, 150)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_ajxib")
+
+[node name="item_pointer3" type="Panel" parent="extra/horizontal_container"]
+custom_minimum_size = Vector2(1103.155, 150)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_ajxib")
+
+[node name="item_pointer4" type="Panel" parent="extra/horizontal_container"]
+custom_minimum_size = Vector2(1103.155, 150)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_ajxib")
 
 [connection signal="pressed" from="TextureButton" to="." method="_on_texture_button_pressed"]

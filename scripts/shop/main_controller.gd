@@ -1,6 +1,6 @@
 extends Control
 
-var clicks
+var clicks: int
 const SAVE_PATH = "user://click_data.save"
 
 
