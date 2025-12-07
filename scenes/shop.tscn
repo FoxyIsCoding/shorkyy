@@ -95,13 +95,12 @@ theme_override_styles/panel = SubResource("StyleBoxTexture_y6sft")
 [node name="box" type="VBoxContainer" parent="HBoxContainer2/pointer"]
 custom_minimum_size = Vector2(6.635, 56.825)
 layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.044444446
-anchor_top = 0.03888889
-anchor_right = 0.95555556
-anchor_bottom = 0.9611111
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+pivot_offset = Vector2(83.155, 91.38)
 alignment = 1
 
 [node name="item_name" type="Label" parent="HBoxContainer2/pointer/box"]
@@ -515,4 +514,3 @@ text = "umm listen to lofi music ig idrk"
 autowrap_mode = 2
 
 [connection signal="pressed" from="TextureButton" to="." method="_on_texture_button_pressed"]
-[connection signal="mouse_entered" from="HBoxContainer2/pointer" to="." method="_on_pointer_mouse_entered"]
