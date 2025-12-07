@@ -39,6 +39,7 @@ func load_level():
 
 
 func _on_start_btn_pressed():
+	shake_button()
 	load_level()
 
 func _on_exit_btn_pressed():

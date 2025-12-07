@@ -28,3 +28,24 @@ func load_stats():
 			var save_data = json.data
 			clicks = save_data.get("clicks", 0)
 			print("Loaded clicks: ", clicks)
+
+# hover effects 
+
+func _on_pointer_mouse_entered():
+	var tween = create_tween()
+	tween.set_parallel(true)
+	
+	# Shrink the object to 90% of its size
+	tween.tween_property(self, "scale", scale * 0.9, 0.2)
+	
+	# Rotate to the right (15 degrees)
+	tween.tween_property(self, "rotation_degrees", rotation_degrees + 15, 0.2)
+	
+	# Chain the return animations
+	tween.set_parallel(false)
+	
+	# Return to original scale
+	tween.tween_property(self, "scale", scale / 0.9, 0.2)
+	
+	# Return to original rotation
+	tween.tween_property(self, "rotation_degrees", rotation_degrees - 15, 0.2)

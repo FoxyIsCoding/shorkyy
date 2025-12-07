@@ -103,17 +103,15 @@ anchor_bottom = 0.9611111
 grow_horizontal = 2
 grow_vertical = 2
 alignment = 1
-metadata/_edit_use_anchors_ = true
 
 [node name="item_name" type="Label" parent="HBoxContainer2/pointer/box"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = SubResource("SystemFont_y6sft")
 theme_override_font_sizes/font_size = 25
-text = "Pointer"
+text = "pointer"
 horizontal_alignment = 1
 vertical_alignment = 1
-uppercase = true
 
 [node name="price" type="Label" parent="HBoxContainer2/pointer/box"]
 layout_mode = 2
@@ -345,19 +343,176 @@ custom_minimum_size = Vector2(1103.155, 150)
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxTexture_ajxib")
 
+[node name="HBoxContainer" type="HBoxContainer" parent="extra/horizontal_container/dvd"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.024475254
+anchor_top = 0.086666666
+anchor_right = 0.9817296
+anchor_bottom = 0.92
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="box" type="VBoxContainer" parent="extra/horizontal_container/dvd/HBoxContainer"]
+custom_minimum_size = Vector2(297.2, 0)
+layout_mode = 2
+alignment = 1
+
+[node name="item_name" type="Label" parent="extra/horizontal_container/dvd/HBoxContainer/box"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = SubResource("SystemFont_y6sft")
+theme_override_font_sizes/font_size = 25
+text = "DVD"
+
+[node name="price" type="Label" parent="extra/horizontal_container/dvd/HBoxContainer/box"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = SubResource("SystemFont_y6sft")
+theme_override_font_sizes/font_size = 16
+text = "100 cookies"
+
+[node name="desc" type="Label" parent="extra/horizontal_container/dvd/HBoxContainer/box"]
+custom_minimum_size = Vector2(24.665, 5.205)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.19434929, 0.19434926, 0.19434926, 1)
+theme_override_fonts/font = SubResource("SystemFont_y6sft")
+theme_override_font_sizes/font_size = 15
+text = "yk that old DVD player bouncy animation"
+autowrap_mode = 2
+
 [node name="subway_surfers" type="Panel" parent="extra/horizontal_container"]
 custom_minimum_size = Vector2(1103.155, 150)
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxTexture_ajxib")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="extra/horizontal_container/subway_surfers"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.024475254
+anchor_top = 0.086666666
+anchor_right = 0.9817296
+anchor_bottom = 0.92
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="box" type="VBoxContainer" parent="extra/horizontal_container/subway_surfers/HBoxContainer"]
+custom_minimum_size = Vector2(297.2, 0)
+layout_mode = 2
+alignment = 1
+
+[node name="item_name" type="Label" parent="extra/horizontal_container/subway_surfers/HBoxContainer/box"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = SubResource("SystemFont_y6sft")
+theme_override_font_sizes/font_size = 25
+text = "subway surfers"
+
+[node name="price" type="Label" parent="extra/horizontal_container/subway_surfers/HBoxContainer/box"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = SubResource("SystemFont_y6sft")
+theme_override_font_sizes/font_size = 16
+text = "200 cookies"
+
+[node name="desc" type="Label" parent="extra/horizontal_container/subway_surfers/HBoxContainer/box"]
+custom_minimum_size = Vector2(24.665, 5.205)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.19434929, 0.19434926, 0.19434926, 1)
+theme_override_fonts/font = SubResource("SystemFont_y6sft")
+theme_override_font_sizes/font_size = 15
+text = "nah if you need to buy ts your attention span is indeed low"
+autowrap_mode = 2
 
 [node name="slime" type="Panel" parent="extra/horizontal_container"]
 custom_minimum_size = Vector2(1103.155, 150)
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxTexture_ajxib")
 
+[node name="HBoxContainer" type="HBoxContainer" parent="extra/horizontal_container/slime"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.024475254
+anchor_top = 0.086666666
+anchor_right = 0.9817296
+anchor_bottom = 0.92
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="box" type="VBoxContainer" parent="extra/horizontal_container/slime/HBoxContainer"]
+custom_minimum_size = Vector2(297.2, 0)
+layout_mode = 2
+alignment = 1
+
+[node name="item_name" type="Label" parent="extra/horizontal_container/slime/HBoxContainer/box"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = SubResource("SystemFont_y6sft")
+theme_override_font_sizes/font_size = 25
+text = "slime"
+
+[node name="price" type="Label" parent="extra/horizontal_container/slime/HBoxContainer/box"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = SubResource("SystemFont_y6sft")
+theme_override_font_sizes/font_size = 16
+text = "200  cookies"
+
+[node name="desc" type="Label" parent="extra/horizontal_container/slime/HBoxContainer/box"]
+custom_minimum_size = Vector2(24.665, 5.205)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.19434929, 0.19434926, 0.19434926, 1)
+theme_override_fonts/font = SubResource("SystemFont_y6sft")
+theme_override_font_sizes/font_size = 15
+text = "that ASMR slime videos"
+autowrap_mode = 2
+
 [node name="lofi" type="Panel" parent="extra/horizontal_container"]
 custom_minimum_size = Vector2(1103.155, 150)
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxTexture_ajxib")
 
+[node name="HBoxContainer" type="HBoxContainer" parent="extra/horizontal_container/lofi"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.024475254
+anchor_top = 0.086666666
+anchor_right = 0.9817296
+anchor_bottom = 0.92
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="box" type="VBoxContainer" parent="extra/horizontal_container/lofi/HBoxContainer"]
+custom_minimum_size = Vector2(297.2, 0)
+layout_mode = 2
+alignment = 1
+
+[node name="item_name" type="Label" parent="extra/horizontal_container/lofi/HBoxContainer/box"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = SubResource("SystemFont_y6sft")
+theme_override_font_sizes/font_size = 25
+text = "lofi-girl"
+
+[node name="price" type="Label" parent="extra/horizontal_container/lofi/HBoxContainer/box"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = SubResource("SystemFont_y6sft")
+theme_override_font_sizes/font_size = 16
+text = "500 cookies"
+
+[node name="desc" type="Label" parent="extra/horizontal_container/lofi/HBoxContainer/box"]
+custom_minimum_size = Vector2(24.665, 5.205)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.19434929, 0.19434926, 0.19434926, 1)
+theme_override_fonts/font = SubResource("SystemFont_y6sft")
+theme_override_font_sizes/font_size = 15
+text = "umm listen to lofi music ig idrk"
+autowrap_mode = 2
+
 [connection signal="pressed" from="TextureButton" to="." method="_on_texture_button_pressed"]
+[connection signal="mouse_entered" from="HBoxContainer2/pointer" to="." method="_on_pointer_mouse_entered"]
