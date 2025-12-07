@@ -25,10 +25,11 @@ color = Color(1, 1, 0.88235295, 1)
 
 [node name="TextureButton" type="TextureButton" parent="."]
 layout_mode = 0
-offset_left = 979.0
-offset_top = 26.0
-offset_right = 1114.0
-offset_bottom = 163.0
+offset_left = 1081.0
+offset_top = 15.999999
+offset_right = 1216.0
+offset_bottom = 153.0
+scale = Vector2(0.35, 0.35)
 texture_normal = ExtResource("1_1l46r")
 texture_pressed = ExtResource("2_032fp")
 texture_hover = ExtResource("3_2fc2m")
