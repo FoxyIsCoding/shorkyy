@@ -1,0 +1,36 @@
+[gd_scene load_steps=5 format=3 uid="uid://b33qvtfjfbp6m"]
+
+[ext_resource type="Texture2D" uid="uid://c8m73f0i2txk8" path="res://assets/my majestic art made in MS paint lol/buttons ig/the majestic exit-close button/close.png" id="1_1l46r"]
+[ext_resource type="Script" uid="uid://or1egfj0q5pj" path="res://scripts/shop/main_controller.gd" id="1_032fp"]
+[ext_resource type="Texture2D" uid="uid://c3m2nt4h2ncsg" path="res://assets/my majestic art made in MS paint lol/buttons ig/the majestic exit-close button/close_pressed.png" id="2_032fp"]
+[ext_resource type="Texture2D" uid="uid://dyx2q4yen2jwh" path="res://assets/my majestic art made in MS paint lol/buttons ig/the majestic exit-close button/close_hover.png" id="3_2fc2m"]
+
+[node name="Shop" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_032fp")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(1, 1, 0.88235295, 1)
+
+[node name="TextureButton" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 979.0
+offset_top = 26.0
+offset_right = 1114.0
+offset_bottom = 163.0
+texture_normal = ExtResource("1_1l46r")
+texture_pressed = ExtResource("2_032fp")
+texture_hover = ExtResource("3_2fc2m")
+
+[connection signal="pressed" from="TextureButton" to="." method="_on_texture_button_pressed"]
