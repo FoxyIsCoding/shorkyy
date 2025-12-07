@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://b33qvtfjfbp6m"]
+[gd_scene load_steps=14 format=3 uid="uid://b33qvtfjfbp6m"]
 
 [ext_resource type="Texture2D" uid="uid://c8m73f0i2txk8" path="res://assets/my majestic art made in MS paint lol/buttons ig/the majestic exit-close button/close.png" id="1_1l46r"]
 [ext_resource type="Script" uid="uid://or1egfj0q5pj" path="res://scripts/shop/main_controller.gd" id="1_032fp"]
@@ -14,6 +14,9 @@ font_names = PackedStringArray("Cursive")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_y6sft"]
 texture = ExtResource("6_ajxib")
+
+[sub_resource type="SystemFont" id="SystemFont_y6sft"]
+font_names = PackedStringArray("Cursive")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_m4ofw"]
 texture = ExtResource("7_y6sft")
@@ -89,22 +92,67 @@ custom_minimum_size = Vector2(180, 180)
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxTexture_y6sft")
 
-[node name="Panel2" type="Panel" parent="HBoxContainer2"]
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer2/pointer"]
+custom_minimum_size = Vector2(6.635, 56.825)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.044444446
+anchor_top = 0.03888889
+anchor_right = 0.95555556
+anchor_bottom = 0.95
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="TextureRect" type="TextureRect" parent="HBoxContainer2/pointer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="HBoxContainer2/pointer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = SubResource("SystemFont_y6sft")
+theme_override_font_sizes/font_size = 25
+text = "Pointer"
+horizontal_alignment = 1
+vertical_alignment = 1
+uppercase = true
+
+[node name="Label2" type="Label" parent="HBoxContainer2/pointer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.19434929, 0.19434926, 0.19434926, 1)
+theme_override_fonts/font = SubResource("SystemFont_y6sft")
+theme_override_font_sizes/font_size = 15
+text = "5 cookies"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label3" type="Label" parent="HBoxContainer2/pointer/VBoxContainer"]
+custom_minimum_size = Vector2(24.665, 5.205)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.19434929, 0.19434926, 0.19434926, 1)
+theme_override_fonts/font = SubResource("SystemFont_y6sft")
+theme_override_font_sizes/font_size = 15
+text = "the classical cursor pointer"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="femboys" type="Panel" parent="HBoxContainer2"]
 custom_minimum_size = Vector2(180, 180)
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxTexture_y6sft")
 
-[node name="Panel3" type="Panel" parent="HBoxContainer2"]
+[node name="golden_cookie" type="Panel" parent="HBoxContainer2"]
 custom_minimum_size = Vector2(180, 180)
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxTexture_y6sft")
 
-[node name="Panel" type="Panel" parent="HBoxContainer2"]
+[node name="blahaj" type="Panel" parent="HBoxContainer2"]
 custom_minimum_size = Vector2(180, 180)
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxTexture_m4ofw")
 
-[node name="Panel4" type="Panel" parent="HBoxContainer2"]
+[node name="useless_coin" type="Panel" parent="HBoxContainer2"]
 custom_minimum_size = Vector2(180, 180)
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxTexture_m4ofw")
