@@ -61,6 +61,7 @@ texture_hover = ExtResource("10_blm8a")
 texture_disabled = ExtResource("8_be0no")
 
 [node name="cookiee" type="TextureButton" parent="."]
+unique_name_in_owner = true
 offset_left = 270.0
 offset_top = 85.0
 offset_right = 882.0
