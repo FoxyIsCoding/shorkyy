@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://vt0ni10ua5di"]
+[gd_scene load_steps=17 format=3 uid="uid://vt0ni10ua5di"]
 
 [ext_resource type="AudioStream" uid="uid://b41a0gkk1ynpw" path="res://assets/Chilling At Nemu's Place.mp3" id="1_0cso3"]
 [ext_resource type="Script" uid="uid://bttb6324wix73" path="res://scripts/game/button_controller.gd" id="1_n1psn"]
@@ -22,6 +22,9 @@ stream_0/weight = 5.444
 stream_1/stream = ExtResource("2_2klcf")
 stream_2/stream = ExtResource("3_2lpho")
 stream_3/stream = ExtResource("4_nakos")
+
+[sub_resource type="SystemFont" id="SystemFont_n1psn"]
+font_names = PackedStringArray("Cursive")
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_n1psn")
@@ -59,9 +62,9 @@ texture_disabled = ExtResource("8_be0no")
 
 [node name="cookiee" type="TextureButton" parent="."]
 offset_left = 270.0
-offset_top = 50.0
+offset_top = 85.0
 offset_right = 882.0
-offset_bottom = 662.0
+offset_bottom = 697.0
 pivot_offset = Vector2(300, 298)
 size_flags_horizontal = 4
 size_flags_vertical = 4
@@ -70,6 +73,18 @@ script = ExtResource("12_wslke")
 
 [node name="poper umm soun thingy" type="AudioStreamPlayer" parent="cookiee"]
 stream = ExtResource("13_gw3fx")
+
+[node name="clicks" type="Label" parent="."]
+offset_left = 433.0
+offset_top = 11.0
+offset_right = 712.0
+offset_bottom = 145.0
+theme_override_colors/font_color = Color(0.099985994, 0.099985994, 0.099985994, 1)
+theme_override_fonts/font = SubResource("SystemFont_n1psn")
+theme_override_font_sizes/font_size = 96
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [connection signal="pressed" from="shopBTN" to="." method="_on_shop_btn_pressed"]
 [connection signal="pressed" from="menuBTN" to="." method="_on_menu_btn_pressed"]

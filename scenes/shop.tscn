@@ -1,9 +1,13 @@
-[gd_scene load_steps=5 format=3 uid="uid://b33qvtfjfbp6m"]
+[gd_scene load_steps=7 format=3 uid="uid://b33qvtfjfbp6m"]
 
 [ext_resource type="Texture2D" uid="uid://c8m73f0i2txk8" path="res://assets/my majestic art made in MS paint lol/buttons ig/the majestic exit-close button/close.png" id="1_1l46r"]
 [ext_resource type="Script" uid="uid://or1egfj0q5pj" path="res://scripts/shop/main_controller.gd" id="1_032fp"]
 [ext_resource type="Texture2D" uid="uid://c3m2nt4h2ncsg" path="res://assets/my majestic art made in MS paint lol/buttons ig/the majestic exit-close button/close_pressed.png" id="2_032fp"]
 [ext_resource type="Texture2D" uid="uid://dyx2q4yen2jwh" path="res://assets/my majestic art made in MS paint lol/buttons ig/the majestic exit-close button/close_hover.png" id="3_2fc2m"]
+[ext_resource type="Texture2D" uid="uid://d1l5735yoyr52" path="res://assets/my majestic art made in MS paint lol/ui art/sillest cookie.png" id="5_2fc2m"]
+
+[sub_resource type="SystemFont" id="SystemFont_2fc2m"]
+font_names = PackedStringArray("Cursive")
 
 [node name="Shop" type="Control"]
 layout_mode = 3
@@ -25,13 +29,46 @@ color = Color(1, 1, 0.88235295, 1)
 
 [node name="TextureButton" type="TextureButton" parent="."]
 layout_mode = 0
-offset_left = 1081.0
-offset_top = 15.999999
-offset_right = 1216.0
-offset_bottom = 153.0
+offset_left = 1074.0
+offset_top = 34.999996
+offset_right = 1209.0
+offset_bottom = 172.0
 scale = Vector2(0.35, 0.35)
 texture_normal = ExtResource("1_1l46r")
 texture_pressed = ExtResource("2_032fp")
 texture_hover = ExtResource("3_2fc2m")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 0.116000004
+offset_right = 4263.7896
+offset_bottom = 550.83203
+grow_horizontal = 2
+scale = Vector2(0.19, 0.19)
+
+[node name="TextureRect" type="TextureRect" parent="HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("5_2fc2m")
+
+[node name="Label" type="Label" parent="HBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = SubResource("SystemFont_2fc2m")
+theme_override_font_sizes/font_size = 165
+text = "69 Cookies"
+
+[node name="ScrollContainer" type="ScrollContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 98.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HFlowContainer" type="HFlowContainer" parent="ScrollContainer"]
+layout_mode = 2
 
 [connection signal="pressed" from="TextureButton" to="." method="_on_texture_button_pressed"]
