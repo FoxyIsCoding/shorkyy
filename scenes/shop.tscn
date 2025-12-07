@@ -92,22 +92,20 @@ custom_minimum_size = Vector2(180, 180)
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxTexture_y6sft")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer2/pointer"]
+[node name="box" type="VBoxContainer" parent="HBoxContainer2/pointer"]
 custom_minimum_size = Vector2(6.635, 56.825)
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.044444446
 anchor_top = 0.03888889
 anchor_right = 0.95555556
-anchor_bottom = 0.95
+anchor_bottom = 0.9611111
 grow_horizontal = 2
 grow_vertical = 2
+alignment = 1
 metadata/_edit_use_anchors_ = true
 
-[node name="TextureRect" type="TextureRect" parent="HBoxContainer2/pointer/VBoxContainer"]
-layout_mode = 2
-
-[node name="Label" type="Label" parent="HBoxContainer2/pointer/VBoxContainer"]
+[node name="item_name" type="Label" parent="HBoxContainer2/pointer/box"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = SubResource("SystemFont_y6sft")
@@ -117,16 +115,16 @@ horizontal_alignment = 1
 vertical_alignment = 1
 uppercase = true
 
-[node name="Label2" type="Label" parent="HBoxContainer2/pointer/VBoxContainer"]
+[node name="price" type="Label" parent="HBoxContainer2/pointer/box"]
 layout_mode = 2
-theme_override_colors/font_color = Color(0.19434929, 0.19434926, 0.19434926, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = SubResource("SystemFont_y6sft")
-theme_override_font_sizes/font_size = 15
+theme_override_font_sizes/font_size = 16
 text = "5 cookies"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Label3" type="Label" parent="HBoxContainer2/pointer/VBoxContainer"]
+[node name="desc" type="Label" parent="HBoxContainer2/pointer/box"]
 custom_minimum_size = Vector2(24.665, 5.205)
 layout_mode = 2
 theme_override_colors/font_color = Color(0.19434929, 0.19434926, 0.19434926, 1)
@@ -142,20 +140,189 @@ custom_minimum_size = Vector2(180, 180)
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxTexture_y6sft")
 
+[node name="box" type="VBoxContainer" parent="HBoxContainer2/femboys"]
+custom_minimum_size = Vector2(6.635, 56.825)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.044444446
+anchor_top = 0.03888889
+anchor_right = 0.95555556
+anchor_bottom = 0.9611111
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="item_name" type="Label" parent="HBoxContainer2/femboys/box"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = SubResource("SystemFont_y6sft")
+theme_override_font_sizes/font_size = 25
+text = "femboy"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="price" type="Label" parent="HBoxContainer2/femboys/box"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = SubResource("SystemFont_y6sft")
+theme_override_font_sizes/font_size = 16
+text = "50 cookies"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="desc" type="Label" parent="HBoxContainer2/femboys/box"]
+custom_minimum_size = Vector2(24.665, 5.205)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.19434929, 0.19434926, 0.19434926, 1)
+theme_override_fonts/font = SubResource("SystemFont_y6sft")
+theme_override_font_sizes/font_size = 15
+text = "the best thing in the shop btw"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
 [node name="golden_cookie" type="Panel" parent="HBoxContainer2"]
 custom_minimum_size = Vector2(180, 180)
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxTexture_y6sft")
+
+[node name="box" type="VBoxContainer" parent="HBoxContainer2/golden_cookie"]
+custom_minimum_size = Vector2(6.635, 56.825)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.044444446
+anchor_top = 0.03888889
+anchor_right = 0.95555556
+anchor_bottom = 0.9611111
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="item_name" type="Label" parent="HBoxContainer2/golden_cookie/box"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = SubResource("SystemFont_y6sft")
+theme_override_font_sizes/font_size = 25
+text = "golden cookie"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="price" type="Label" parent="HBoxContainer2/golden_cookie/box"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = SubResource("SystemFont_y6sft")
+theme_override_font_sizes/font_size = 16
+text = "150 cookies"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="desc" type="Label" parent="HBoxContainer2/golden_cookie/box"]
+custom_minimum_size = Vector2(24.665, 5.205)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.19434929, 0.19434926, 0.19434926, 1)
+theme_override_fonts/font = SubResource("SystemFont_y6sft")
+theme_override_font_sizes/font_size = 15
+text = "the classical cursor pointer"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
 
 [node name="blahaj" type="Panel" parent="HBoxContainer2"]
 custom_minimum_size = Vector2(180, 180)
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxTexture_m4ofw")
 
+[node name="box" type="VBoxContainer" parent="HBoxContainer2/blahaj"]
+custom_minimum_size = Vector2(6.635, 56.825)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.044444446
+anchor_top = 0.03888889
+anchor_right = 0.95555556
+anchor_bottom = 0.9611111
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="item_name" type="Label" parent="HBoxContainer2/blahaj/box"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = SubResource("SystemFont_y6sft")
+theme_override_font_sizes/font_size = 25
+text = "blahaj"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="price" type="Label" parent="HBoxContainer2/blahaj/box"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = SubResource("SystemFont_y6sft")
+theme_override_font_sizes/font_size = 16
+text = "500 cookies"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="desc" type="Label" parent="HBoxContainer2/blahaj/box"]
+custom_minimum_size = Vector2(24.665, 5.205)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.19434929, 0.19434926, 0.19434926, 1)
+theme_override_fonts/font = SubResource("SystemFont_y6sft")
+theme_override_font_sizes/font_size = 15
+text = "the silly ikea PLUSHIE :3"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
 [node name="useless_coin" type="Panel" parent="HBoxContainer2"]
 custom_minimum_size = Vector2(180, 180)
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxTexture_m4ofw")
+
+[node name="box" type="VBoxContainer" parent="HBoxContainer2/useless_coin"]
+custom_minimum_size = Vector2(6.635, 56.825)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.044444446
+anchor_top = 0.03888889
+anchor_right = 0.95555556
+anchor_bottom = 0.9611111
+offset_left = -3.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="item_name" type="Label" parent="HBoxContainer2/useless_coin/box"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = SubResource("SystemFont_y6sft")
+theme_override_font_sizes/font_size = 25
+text = "old coin"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="price" type="Label" parent="HBoxContainer2/useless_coin/box"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = SubResource("SystemFont_y6sft")
+theme_override_font_sizes/font_size = 16
+text = "1000 cookies"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="desc" type="Label" parent="HBoxContainer2/useless_coin/box"]
+custom_minimum_size = Vector2(0, 25.395)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.19434929, 0.19434926, 0.19434926, 1)
+theme_override_fonts/font = SubResource("SystemFont_y6sft")
+theme_override_font_sizes/font_size = 15
+text = "u useless coin that does absolutely nothing"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
 
 [node name="extra" type="ScrollContainer" parent="."]
 layout_mode = 1
