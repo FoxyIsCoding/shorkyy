@@ -1,6 +1,7 @@
-[gd_scene load_steps=17 format=3 uid="uid://vt0ni10ua5di"]
+[gd_scene load_steps=24 format=3 uid="uid://vt0ni10ua5di"]
 
 [ext_resource type="AudioStream" uid="uid://b41a0gkk1ynpw" path="res://assets/Chilling At Nemu's Place.mp3" id="1_0cso3"]
+[ext_resource type="Shader" uid="uid://dlg8lpardycni" path="res://shaders/paper.gdshader" id="1_c00ee"]
 [ext_resource type="Script" uid="uid://bttb6324wix73" path="res://scripts/game/button_controller.gd" id="1_n1psn"]
 [ext_resource type="AudioStream" uid="uid://dwbdwpobfgk5d" path="res://assets/Cozy Tunes (Pro) v1.4/Cozy Tunes (Pro)/Audio/mp3/Tracks/Strange Worlds.mp3" id="2_2klcf"]
 [ext_resource type="AudioStream" uid="uid://dlaah604gnuv0" path="res://assets/Cozy Tunes (Pro) v1.4/Cozy Tunes (Pro)/Audio/ogg/Tracks/Wanderers Tale.ogg" id="3_2lpho"]
@@ -14,22 +15,44 @@
 [ext_resource type="Texture2D" uid="uid://dsgy1ro4deok1" path="res://assets/my majestic art made in MS paint lol/cookiee.png" id="11_mlgqr"]
 [ext_resource type="Script" uid="uid://c4pwpnlqt2fpb" path="res://scripts/cookieController.gd" id="12_wslke"]
 [ext_resource type="AudioStream" uid="uid://vkihgn375fyy" path="res://assets/400 Sounds Pack/UI/sci_fi_hover_high.wav" id="13_gw3fx"]
+[ext_resource type="Texture2D" uid="uid://crhgifogudbdj" path="res://assets/noise.jpg" id="13_p7tei"]
+[ext_resource type="Material" uid="uid://rsbyyhr0bllh" path="res://shaders/paper.tres" id="14_c70he"]
+[ext_resource type="Shader" uid="uid://fvec0iwwupyw" path="res://shaders/that_black_circle_effect.gdshader" id="18_mo32q"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_6k6j1"]
+shader = ExtResource("18_mo32q")
+shader_parameter/vignette_intensity = 2.14
+shader_parameter/vignette_opacity = 0.0090000004275
+shader_parameter/vignette_rgb = Color(0, 0, 0, 1)
 
 [sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_hrmi8"]
 streams_count = 4
 stream_0/stream = ExtResource("1_0cso3")
-stream_0/weight = 5.444
 stream_1/stream = ExtResource("2_2klcf")
 stream_2/stream = ExtResource("3_2lpho")
 stream_3/stream = ExtResource("4_nakos")
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_mo32q"]
+shader = ExtResource("1_c00ee")
+shader_parameter/scale = Vector2(1, 1)
+shader_parameter/strength = 0.34
+shader_parameter/fps = 6.0
+shader_parameter/noise = ExtResource("13_p7tei")
+
 [sub_resource type="SystemFont" id="SystemFont_n1psn"]
 font_names = PackedStringArray("Cursive")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_m335s"]
+shader = ExtResource("1_c00ee")
+shader_parameter/scale = Vector2(1, 1)
+shader_parameter/strength = 0.365
+shader_parameter/fps = 6.0
+shader_parameter/noise = ExtResource("13_p7tei")
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_n1psn")
 
-[node name="ColorRect" type="ColorRect" parent="."]
+[node name="bg" type="ColorRect" parent="."]
 offset_left = -24.0
 offset_top = -21.0
 offset_right = 1202.0
@@ -37,24 +60,35 @@ offset_bottom = 675.0
 size_flags_horizontal = 4
 color = Color(1, 1, 0.88235295, 1)
 
+[node name="vignette" type="ColorRect" parent="."]
+material = SubResource("ShaderMaterial_6k6j1")
+offset_left = -25.0
+offset_top = -21.0
+offset_right = 1202.0
+offset_bottom = 677.0
+
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = SubResource("AudioStreamRandomizer_hrmi8")
 autoplay = true
 
 [node name="shopBTN" type="TextureButton" parent="."]
+material = SubResource("ShaderMaterial_mo32q")
 offset_left = 973.0
 offset_top = 545.0
 offset_right = 1152.0
 offset_bottom = 648.0
+rotation = 0.0021059138
 texture_normal = ExtResource("5_2klcf")
 texture_pressed = ExtResource("6_nakos")
 texture_hover = ExtResource("7_jh32y")
 texture_focused = ExtResource("5_2klcf")
 
 [node name="menuBTN" type="TextureButton" parent="."]
+material = SubResource("ShaderMaterial_mo32q")
 offset_left = 973.0
 offset_right = 1152.0
 offset_bottom = 103.0
+rotation = 0.0021059138
 texture_normal = ExtResource("8_be0no")
 texture_pressed = ExtResource("9_blm8a")
 texture_hover = ExtResource("10_blm8a")
@@ -62,6 +96,7 @@ texture_disabled = ExtResource("8_be0no")
 
 [node name="cookiee" type="TextureButton" parent="."]
 unique_name_in_owner = true
+material = ExtResource("14_c70he")
 offset_left = 270.0
 offset_top = 85.0
 offset_right = 882.0
@@ -76,14 +111,30 @@ script = ExtResource("12_wslke")
 stream = ExtResource("13_gw3fx")
 
 [node name="clicks" type="Label" parent="."]
-offset_left = 433.0
-offset_top = 11.0
-offset_right = 712.0
-offset_bottom = 145.0
+material = ExtResource("14_c70he")
+offset_left = 425.00003
+offset_top = -3.8143692
+offset_right = 704.0
+offset_bottom = 130.18564
+rotation = -0.00066534686
 theme_override_colors/font_color = Color(0.099985994, 0.099985994, 0.099985994, 1)
 theme_override_fonts/font = SubResource("SystemFont_n1psn")
 theme_override_font_sizes/font_size = 96
 text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="cps" type="Label" parent="."]
+material = SubResource("ShaderMaterial_m335s")
+offset_left = 389.0
+offset_top = 61.185623
+offset_right = 740.0533
+offset_bottom = 195.18562
+rotation = -0.00066534686
+theme_override_colors/font_color = Color(0.099985994, 0.099985994, 0.099985994, 1)
+theme_override_fonts/font = SubResource("SystemFont_n1psn")
+theme_override_font_sizes/font_size = 32
+text = "0 CPS"
 horizontal_alignment = 1
 vertical_alignment = 1
 

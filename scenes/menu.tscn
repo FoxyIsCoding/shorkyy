@@ -1,8 +1,12 @@
-[gd_scene load_steps=22 format=4 uid="uid://dl6bc7l6tovxu"]
+[gd_scene load_steps=28 format=4 uid="uid://dl6bc7l6tovxu"]
 
 [ext_resource type="Script" uid="uid://bdk4tr0tsjmc1" path="res://scripts/menu/button_controller.gd" id="1_con2f"]
 [ext_resource type="Texture2D" uid="uid://00ijnwkvi8im" path="res://assets/UI/arrow_thingy.png" id="1_yqeox"]
+[ext_resource type="Shader" uid="uid://dlg8lpardycni" path="res://shaders/paper.gdshader" id="2_g3eks"]
+[ext_resource type="Shader" uid="uid://fvec0iwwupyw" path="res://shaders/that_black_circle_effect.gdshader" id="2_v86rl"]
 [ext_resource type="AudioStream" uid="uid://b41a0gkk1ynpw" path="res://assets/Chilling At Nemu's Place.mp3" id="2_vjb58"]
+[ext_resource type="Texture2D" uid="uid://crhgifogudbdj" path="res://assets/noise.jpg" id="3_v86rl"]
+[ext_resource type="Material" uid="uid://rsbyyhr0bllh" path="res://shaders/paper.tres" id="4_13sgg"]
 
 [sub_resource type="Image" id="Image_4h3mk"]
 data = {
@@ -1058,6 +1062,19 @@ Button/styles/hover = SubResource("StyleBoxFlat_mhnvy")
 Button/styles/normal = SubResource("StyleBoxFlat_4h3mk")
 Button/styles/pressed = SubResource("StyleBoxFlat_4ytvr")
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_v86rl"]
+shader = ExtResource("2_v86rl")
+shader_parameter/vignette_intensity = 2.14
+shader_parameter/vignette_opacity = 0.0090000004275
+shader_parameter/vignette_rgb = Color(0, 0, 0, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_i6lef"]
+shader = ExtResource("2_g3eks")
+shader_parameter/scale = Vector2(1, 1)
+shader_parameter/strength = 0.065
+shader_parameter/fps = 6.0
+shader_parameter/noise = ExtResource("3_v86rl")
+
 [sub_resource type="SystemFont" id="SystemFont_con2f"]
 font_names = PackedStringArray("Cursive")
 
@@ -1087,7 +1104,7 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_con2f")
 
-[node name="ColorRect" type="ColorRect" parent="."]
+[node name="bg" type="ColorRect" parent="."]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -1097,7 +1114,16 @@ grow_vertical = 2
 theme = SubResource("Theme_4h3mk")
 color = Color(1, 1, 0.8745098, 1)
 
+[node name="vignette" type="ColorRect" parent="."]
+material = SubResource("ShaderMaterial_v86rl")
+layout_mode = 0
+offset_left = -25.0
+offset_top = -21.0
+offset_right = 1202.0
+offset_bottom = 677.0
+
 [node name="Label" type="Label" parent="."]
+material = SubResource("ShaderMaterial_i6lef")
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -1117,6 +1143,7 @@ text = "Silly game :3"
 horizontal_alignment = 1
 
 [node name="BoxContainer" type="BoxContainer" parent="."]
+material = ExtResource("4_13sgg")
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -1127,6 +1154,7 @@ grow_vertical = 2
 vertical = true
 
 [node name="start_btn" type="Button" parent="BoxContainer"]
+material = ExtResource("4_13sgg")
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_focus_color = Color(0.94270515, 0.5790523, 0.7370981, 1)
@@ -1153,6 +1181,7 @@ text = "start~"
 flat = true
 
 [node name="setting_btn" type="Button" parent="BoxContainer"]
+material = ExtResource("4_13sgg")
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_focus_color = Color(0.94270515, 0.5790523, 0.7370981, 1)
@@ -1179,6 +1208,7 @@ text = "settings "
 flat = true
 
 [node name="exit_btn" type="Button" parent="BoxContainer"]
+material = ExtResource("4_13sgg")
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_focus_color = Color(0.94270515, 0.5790523, 0.7370981, 1)

@@ -1,7 +1,7 @@
 extends TextureButton
 
 # exports
-@export_category("Stats")
+@export_category("Starter")
 @export var coins: int 
 @export var cps: int
 @export_category("Animation settings")
@@ -23,7 +23,8 @@ func _ready():
 	original_scale = scale
 	original_rotation = rotation
 	load_stats()
-	$"../clicks".text = clicks
+	$"../clicks".text = str(clicks)
+	$"../cps".text = str(cps) + "CPS"
 
 func _on_button_down():
 	$"poper umm soun thingy".play(0)
@@ -41,7 +42,7 @@ func _on_button_down():
 	tween.tween_property(self, "scale", original_scale * shrink_amount, tween_duration)
 	tween.tween_property(self, "rotation", original_rotation + rotate_amount, tween_duration)
 	tween.tween_callback(_on_tween_done)
-	$"../clicks".text = clicks
+	$"../clicks".text = str(clicks)
 
 func _on_button_up():
 	if tween:

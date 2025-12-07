@@ -1,13 +1,37 @@
-[gd_scene load_steps=14 format=3 uid="uid://b33qvtfjfbp6m"]
+[gd_scene load_steps=22 format=3 uid="uid://b33qvtfjfbp6m"]
 
 [ext_resource type="Texture2D" uid="uid://c8m73f0i2txk8" path="res://assets/my majestic art made in MS paint lol/buttons ig/the majestic exit-close button/close.png" id="1_1l46r"]
 [ext_resource type="Script" uid="uid://or1egfj0q5pj" path="res://scripts/shop/main_controller.gd" id="1_032fp"]
+[ext_resource type="Material" uid="uid://rsbyyhr0bllh" path="res://shaders/paper.tres" id="2_1v8qu"]
 [ext_resource type="Texture2D" uid="uid://c3m2nt4h2ncsg" path="res://assets/my majestic art made in MS paint lol/buttons ig/the majestic exit-close button/close_pressed.png" id="2_032fp"]
+[ext_resource type="Shader" uid="uid://fvec0iwwupyw" path="res://shaders/that_black_circle_effect.gdshader" id="2_44xle"]
 [ext_resource type="Texture2D" uid="uid://dyx2q4yen2jwh" path="res://assets/my majestic art made in MS paint lol/buttons ig/the majestic exit-close button/close_hover.png" id="3_2fc2m"]
 [ext_resource type="Texture2D" uid="uid://d1l5735yoyr52" path="res://assets/my majestic art made in MS paint lol/ui art/sillest cookie.png" id="5_2fc2m"]
 [ext_resource type="Texture2D" uid="uid://7w17uuum0dsg" path="res://assets/my majestic art made in MS paint lol/ui art/box.png" id="6_8r1wq"]
+[ext_resource type="Shader" uid="uid://dlg8lpardycni" path="res://shaders/paper.gdshader" id="6_44xle"]
 [ext_resource type="Texture2D" uid="uid://dbwe23oknjkvd" path="res://assets/my majestic art made in MS paint lol/ui art/box_recommended.png" id="6_ajxib"]
+[ext_resource type="Texture2D" uid="uid://crhgifogudbdj" path="res://assets/noise.jpg" id="7_24it5"]
 [ext_resource type="Texture2D" uid="uid://cvs8gppnfrfps" path="res://assets/my majestic art made in MS paint lol/ui art/box_recommended_new.png" id="7_y6sft"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_24it5"]
+shader = ExtResource("2_44xle")
+shader_parameter/vignette_intensity = 2.14
+shader_parameter/vignette_opacity = 0.0090000004275
+shader_parameter/vignette_rgb = Color(0, 0, 0, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_1v8qu"]
+shader = ExtResource("6_44xle")
+shader_parameter/scale = Vector2(1, 1)
+shader_parameter/strength = 1.145
+shader_parameter/fps = 6.0
+shader_parameter/noise = ExtResource("7_24it5")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_7mqwv"]
+shader = ExtResource("6_44xle")
+shader_parameter/scale = Vector2(1, 1)
+shader_parameter/strength = 0.56
+shader_parameter/fps = 6.0
+shader_parameter/noise = ExtResource("7_24it5")
 
 [sub_resource type="SystemFont" id="SystemFont_2fc2m"]
 font_names = PackedStringArray("Cursive")
@@ -20,6 +44,13 @@ font_names = PackedStringArray("Cursive")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_m4ofw"]
 texture = ExtResource("7_y6sft")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_44xle"]
+shader = ExtResource("6_44xle")
+shader_parameter/scale = Vector2(1, 1)
+shader_parameter/strength = -0.035
+shader_parameter/fps = 6.0
+shader_parameter/noise = ExtResource("7_24it5")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ajxib"]
 texture = ExtResource("6_8r1wq")
@@ -48,12 +79,22 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(1, 1, 0.88235295, 1)
 
+[node name="vignette" type="ColorRect" parent="."]
+material = SubResource("ShaderMaterial_24it5")
+layout_mode = 0
+offset_left = -25.0
+offset_top = -21.0
+offset_right = 1202.0
+offset_bottom = 677.0
+
 [node name="TextureButton" type="TextureButton" parent="."]
+material = SubResource("ShaderMaterial_1v8qu")
 layout_mode = 0
 offset_left = 1074.0
 offset_top = 34.999996
 offset_right = 1209.0
 offset_bottom = 172.0
+rotation = -0.002216311
 scale = Vector2(0.35, 0.35)
 texture_normal = ExtResource("1_1l46r")
 texture_pressed = ExtResource("2_032fp")
@@ -70,10 +111,12 @@ grow_horizontal = 2
 scale = Vector2(0.19, 0.19)
 
 [node name="TextureRect" type="TextureRect" parent="HBoxContainer"]
+material = SubResource("ShaderMaterial_7mqwv")
 layout_mode = 2
 texture = ExtResource("5_2fc2m")
 
 [node name="cookies" type="Label" parent="HBoxContainer"]
+material = ExtResource("2_1v8qu")
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = SubResource("SystemFont_2fc2m")
@@ -88,6 +131,7 @@ offset_bottom = 271.0
 alignment = 1
 
 [node name="pointer" type="Panel" parent="HBoxContainer2"]
+material = ExtResource("2_1v8qu")
 custom_minimum_size = Vector2(180, 180)
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxTexture_y6sft")
@@ -133,6 +177,7 @@ vertical_alignment = 1
 autowrap_mode = 2
 
 [node name="femboys" type="Panel" parent="HBoxContainer2"]
+material = ExtResource("2_1v8qu")
 custom_minimum_size = Vector2(180, 180)
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxTexture_y6sft")
@@ -180,6 +225,7 @@ vertical_alignment = 1
 autowrap_mode = 2
 
 [node name="golden_cookie" type="Panel" parent="HBoxContainer2"]
+material = ExtResource("2_1v8qu")
 custom_minimum_size = Vector2(180, 180)
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxTexture_y6sft")
@@ -227,6 +273,7 @@ vertical_alignment = 1
 autowrap_mode = 2
 
 [node name="blahaj" type="Panel" parent="HBoxContainer2"]
+material = ExtResource("2_1v8qu")
 custom_minimum_size = Vector2(180, 180)
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxTexture_m4ofw")
@@ -274,6 +321,7 @@ vertical_alignment = 1
 autowrap_mode = 2
 
 [node name="useless_coin" type="Panel" parent="HBoxContainer2"]
+material = ExtResource("2_1v8qu")
 custom_minimum_size = Vector2(180, 180)
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxTexture_m4ofw")
@@ -322,6 +370,7 @@ vertical_alignment = 1
 autowrap_mode = 2
 
 [node name="extra" type="ScrollContainer" parent="."]
+material = ExtResource("2_1v8qu")
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -338,6 +387,7 @@ alignment = 1
 last_wrap_alignment = 2
 
 [node name="dvd" type="Panel" parent="extra/horizontal_container"]
+material = SubResource("ShaderMaterial_44xle")
 custom_minimum_size = Vector2(1103.155, 150)
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxTexture_ajxib")
@@ -382,6 +432,7 @@ text = "yk that old DVD player bouncy animation"
 autowrap_mode = 2
 
 [node name="subway_surfers" type="Panel" parent="extra/horizontal_container"]
+material = SubResource("ShaderMaterial_44xle")
 custom_minimum_size = Vector2(1103.155, 150)
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxTexture_ajxib")
@@ -426,6 +477,7 @@ text = "nah if you need to buy ts your attention span is indeed low"
 autowrap_mode = 2
 
 [node name="slime" type="Panel" parent="extra/horizontal_container"]
+material = SubResource("ShaderMaterial_44xle")
 custom_minimum_size = Vector2(1103.155, 150)
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxTexture_ajxib")
@@ -470,6 +522,7 @@ text = "that ASMR slime videos"
 autowrap_mode = 2
 
 [node name="lofi" type="Panel" parent="extra/horizontal_container"]
+material = SubResource("ShaderMaterial_44xle")
 custom_minimum_size = Vector2(1103.155, 150)
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxTexture_ajxib")
