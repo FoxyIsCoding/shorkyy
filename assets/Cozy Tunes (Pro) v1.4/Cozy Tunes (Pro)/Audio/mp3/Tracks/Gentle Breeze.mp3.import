@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://d4kwqgb7q161w"
+path="res://.godot/imported/Gentle Breeze.mp3-7c6de58fab2f486eb589fac86d84b6d3.mp3str"
+
+[deps]
+
+source_file="res://assets/Cozy Tunes (Pro) v1.4/Cozy Tunes (Pro)/Audio/mp3/Tracks/Gentle Breeze.mp3"
+dest_files=["res://.godot/imported/Gentle Breeze.mp3-7c6de58fab2f486eb589fac86d84b6d3.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

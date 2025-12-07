@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://8op7t4qxn0r0"
+path="res://.godot/imported/stalker.ogg-ec65c3d5982555201bb27c564ac6ffba.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/Cozy Tunes (Pro) v1.4/Cozy Tunes (Pro)/Audio/ogg/Sound Effects/stalker.ogg"
+dest_files=["res://.godot/imported/stalker.ogg-ec65c3d5982555201bb27c564ac6ffba.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

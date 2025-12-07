@@ -1,3 +1,55 @@
-[gd_scene format=3 uid="uid://vt0ni10ua5di"]
+[gd_scene load_steps=11 format=3 uid="uid://vt0ni10ua5di"]
+
+[ext_resource type="AudioStream" uid="uid://b41a0gkk1ynpw" path="res://assets/Chilling At Nemu's Place.mp3" id="1_0cso3"]
+[ext_resource type="AudioStream" uid="uid://dwbdwpobfgk5d" path="res://assets/Cozy Tunes (Pro) v1.4/Cozy Tunes (Pro)/Audio/mp3/Tracks/Strange Worlds.mp3" id="2_2klcf"]
+[ext_resource type="AudioStream" uid="uid://dlaah604gnuv0" path="res://assets/Cozy Tunes (Pro) v1.4/Cozy Tunes (Pro)/Audio/ogg/Tracks/Wanderers Tale.ogg" id="3_2lpho"]
+[ext_resource type="AudioStream" uid="uid://bfyvx06efiqb2" path="res://assets/Cozy Tunes (Pro) v1.4/Cozy Tunes (Pro)/Audio/mp3/Tracks/Wanderer's Tale.mp3" id="4_nakos"]
+[ext_resource type="Texture2D" uid="uid://bh8i7lolqg6" path="res://assets/my majestic art made in MS paint lol/shop.png" id="5_2klcf"]
+[ext_resource type="Texture2D" uid="uid://d1mtfs6xq2yj" path="res://assets/my majestic art made in MS paint lol/shop_pressed.png" id="6_nakos"]
+[ext_resource type="Texture2D" uid="uid://ddlr7lxug0bge" path="res://assets/my majestic art made in MS paint lol/shop_hover.png" id="7_jh32y"]
+[ext_resource type="Texture2D" uid="uid://ddiskqeg5qfvu" path="res://assets/my majestic art made in MS paint lol/buttons ig/the hamburger kinda looking menu button/menu.png" id="8_be0no"]
+[ext_resource type="Texture2D" uid="uid://caxlysim00vca" path="res://assets/my majestic art made in MS paint lol/buttons ig/the hamburger kinda looking menu button/menu_presssed.png" id="9_blm8a"]
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_hrmi8"]
+streams_count = 4
+stream_0/stream = ExtResource("1_0cso3")
+stream_0/weight = 5.444
+stream_1/stream = ExtResource("2_2klcf")
+stream_2/stream = ExtResource("3_2lpho")
+stream_3/stream = ExtResource("4_nakos")
 
 [node name="Node2D" type="Node2D"]
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_left = -24.0
+offset_top = -21.0
+offset_right = 1202.0
+offset_bottom = 675.0
+color = Color(1, 1, 0.88235295, 1)
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = SubResource("AudioStreamRandomizer_hrmi8")
+autoplay = true
+
+[node name="TextureButton" type="TextureButton" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -4.0
+offset_top = 558.0
+offset_right = 175.0
+offset_bottom = 661.0
+grow_horizontal = 2
+grow_vertical = 2
+texture_normal = ExtResource("5_2klcf")
+texture_pressed = ExtResource("6_nakos")
+texture_hover = ExtResource("7_jh32y")
+texture_focused = ExtResource("6_nakos")
+
+[node name="TextureButton2" type="TextureButton" parent="."]
+offset_left = 985.0
+offset_top = -17.0
+offset_right = 1164.0
+offset_bottom = 86.0
+texture_normal = ExtResource("8_be0no")
+texture_pressed = ExtResource("9_blm8a")

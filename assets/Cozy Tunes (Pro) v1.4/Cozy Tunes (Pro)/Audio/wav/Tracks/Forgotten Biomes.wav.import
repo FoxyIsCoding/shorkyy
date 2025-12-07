@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://bl5fofvo4s8k5"
+path="res://.godot/imported/Forgotten Biomes.wav-27152241ca5e5c4c4f11dfb8503d2331.sample"
+
+[deps]
+
+source_file="res://assets/Cozy Tunes (Pro) v1.4/Cozy Tunes (Pro)/Audio/wav/Tracks/Forgotten Biomes.wav"
+dest_files=["res://.godot/imported/Forgotten Biomes.wav-27152241ca5e5c4c4f11dfb8503d2331.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

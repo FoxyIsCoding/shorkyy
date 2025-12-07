@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bqm0qopi6t05r"
+path="res://.godot/imported/Drifting Memories.mp3-49bababd70a8ab648d4e8a3ac12c62eb.mp3str"
+
+[deps]
+
+source_file="res://assets/Cozy Tunes (Pro) v1.4/Cozy Tunes (Pro)/Audio/mp3/Tracks/Drifting Memories.mp3"
+dest_files=["res://.godot/imported/Drifting Memories.mp3-49bababd70a8ab648d4e8a3ac12c62eb.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

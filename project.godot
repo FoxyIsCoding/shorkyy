@@ -11,6 +11,7 @@ config_version=5
 [application]
 
 config/name="shorkyy"
+run/main_scene="uid://dl6bc7l6tovxu"
 config/features=PackedStringArray("4.5", "GL Compatibility")
 
 [editor_plugins]

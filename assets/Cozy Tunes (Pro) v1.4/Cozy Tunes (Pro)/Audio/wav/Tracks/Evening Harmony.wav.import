@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://dhwdbn7s4kdkp"
+path="res://.godot/imported/Evening Harmony.wav-1b996624f47bf62d7f95bf9d68dbbe74.sample"
+
+[deps]
+
+source_file="res://assets/Cozy Tunes (Pro) v1.4/Cozy Tunes (Pro)/Audio/wav/Tracks/Evening Harmony.wav"
+dest_files=["res://.godot/imported/Evening Harmony.wav-1b996624f47bf62d7f95bf9d68dbbe74.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

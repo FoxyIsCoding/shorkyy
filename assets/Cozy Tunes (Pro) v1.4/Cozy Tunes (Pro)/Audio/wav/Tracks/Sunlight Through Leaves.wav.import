@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://beput1b78yejs"
+path="res://.godot/imported/Sunlight Through Leaves.wav-e81f589087a2fe6a810c0846a1969438.sample"
+
+[deps]
+
+source_file="res://assets/Cozy Tunes (Pro) v1.4/Cozy Tunes (Pro)/Audio/wav/Tracks/Sunlight Through Leaves.wav"
+dest_files=["res://.godot/imported/Sunlight Through Leaves.wav-e81f589087a2fe6a810c0846a1969438.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

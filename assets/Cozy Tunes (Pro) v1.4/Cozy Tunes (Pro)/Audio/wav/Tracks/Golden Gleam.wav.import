@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://dnonac3657acb"
+path="res://.godot/imported/Golden Gleam.wav-42d469953f780c12e8c69f55700cc17d.sample"
+
+[deps]
+
+source_file="res://assets/Cozy Tunes (Pro) v1.4/Cozy Tunes (Pro)/Audio/wav/Tracks/Golden Gleam.wav"
+dest_files=["res://.godot/imported/Golden Gleam.wav-42d469953f780c12e8c69f55700cc17d.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

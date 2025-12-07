@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://bmxx6h1rwr08c"
+path="res://.godot/imported/phantom.ogg-a2222f8bf7e43c5a8182d25e0442146d.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/Cozy Tunes (Pro) v1.4/Cozy Tunes (Pro)/Audio/ogg/Sound Effects/phantom.ogg"
+dest_files=["res://.godot/imported/phantom.ogg-a2222f8bf7e43c5a8182d25e0442146d.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

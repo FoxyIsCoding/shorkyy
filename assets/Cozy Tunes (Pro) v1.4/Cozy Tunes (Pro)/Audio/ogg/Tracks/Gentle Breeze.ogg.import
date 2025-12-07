@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://dvpybr2t2sasr"
+path="res://.godot/imported/Gentle Breeze.ogg-d006745cd717eba1f140b57a5e24ab89.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/Cozy Tunes (Pro) v1.4/Cozy Tunes (Pro)/Audio/ogg/Tracks/Gentle Breeze.ogg"
+dest_files=["res://.godot/imported/Gentle Breeze.ogg-d006745cd717eba1f140b57a5e24ab89.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

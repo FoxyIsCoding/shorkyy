@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://cx2o6ruxu4ard"
+path="res://.godot/imported/underwater world.mp3-d62667bb746c3073776e0c82a88c6dec.mp3str"
+
+[deps]
+
+source_file="res://assets/Cozy Tunes (Pro) v1.4/Cozy Tunes (Pro)/Audio/mp3/Sound Effects/underwater world.mp3"
+dest_files=["res://.godot/imported/underwater world.mp3-d62667bb746c3073776e0c82a88c6dec.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

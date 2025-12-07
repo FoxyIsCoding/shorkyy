@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://pmvuynoewpag"
+path="res://.godot/imported/Polar Lights.mp3-7ff18950ab9a248e6d701b1b3511dadd.mp3str"
+
+[deps]
+
+source_file="res://assets/Cozy Tunes (Pro) v1.4/Cozy Tunes (Pro)/Audio/mp3/Tracks/Polar Lights.mp3"
+dest_files=["res://.godot/imported/Polar Lights.mp3-7ff18950ab9a248e6d701b1b3511dadd.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
