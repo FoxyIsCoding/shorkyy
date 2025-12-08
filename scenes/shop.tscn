@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://b33qvtfjfbp6m"]
+[gd_scene load_steps=25 format=3 uid="uid://b33qvtfjfbp6m"]
 
 [ext_resource type="Texture2D" uid="uid://c8m73f0i2txk8" path="res://assets/my majestic art made in MS paint lol/buttons ig/the majestic exit-close button/close.png" id="1_1l46r"]
 [ext_resource type="Script" uid="uid://or1egfj0q5pj" path="res://scripts/shop/main_controller.gd" id="1_032fp"]
@@ -12,6 +12,8 @@
 [ext_resource type="Texture2D" uid="uid://dbwe23oknjkvd" path="res://assets/my majestic art made in MS paint lol/ui art/box_recommended.png" id="6_ajxib"]
 [ext_resource type="Texture2D" uid="uid://crhgifogudbdj" path="res://assets/noise.jpg" id="7_24it5"]
 [ext_resource type="Texture2D" uid="uid://cvs8gppnfrfps" path="res://assets/my majestic art made in MS paint lol/ui art/box_recommended_new.png" id="7_y6sft"]
+[ext_resource type="AudioStream" uid="uid://rqjpq6gdovj" path="res://assets/400 Sounds Pack/UI/cancel.wav" id="13_7mqwv"]
+[ext_resource type="AudioStream" uid="uid://c0valxrffh8lb" path="res://assets/400 Sounds Pack/UI/pop_4.wav" id="14_7mqwv"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_24it5"]
 shader = ExtResource("2_44xle")
@@ -61,7 +63,16 @@ texture_margin_bottom = 2.0
 axis_stretch_horizontal = 2
 axis_stretch_vertical = 2
 
-[node name="Shop" type="Control"]
+[sub_resource type="AudioStreamInteractive" id="AudioStreamInteractive_j14q8"]
+clip_count = 2
+clip_0/name = &"fail"
+clip_0/stream = ExtResource("13_7mqwv")
+clip_0/auto_advance = 0
+clip_1/name = &"buy"
+clip_1/stream = ExtResource("14_7mqwv")
+clip_1/auto_advance = 0
+
+[node name="Shop" type="Control" node_paths=PackedStringArray("pointer_object", "pointer_price_object", "femboys_object", "femboys_price_object", "golden_cookie_object", "golden_cookie_price_object", "blahaj_object", "blahaj_price_object", "useless_coin_object", "useless_coin_price_object")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -69,6 +80,16 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_032fp")
+pointer_object = NodePath("HBoxContainer2/1")
+pointer_price_object = NodePath("HBoxContainer2/1/box/price")
+femboys_object = NodePath("HBoxContainer2/2")
+femboys_price_object = NodePath("HBoxContainer2/2/box/price")
+golden_cookie_object = NodePath("HBoxContainer2/3")
+golden_cookie_price_object = NodePath("HBoxContainer2/3/box/price")
+blahaj_object = NodePath("HBoxContainer2/4")
+blahaj_price_object = NodePath("HBoxContainer2/4/box/price")
+useless_coin_object = NodePath("HBoxContainer2/5")
+useless_coin_price_object = NodePath("HBoxContainer2/5/box/price")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 layout_mode = 1
@@ -130,13 +151,22 @@ offset_right = 1150.0
 offset_bottom = 271.0
 alignment = 1
 
-[node name="pointer" type="Panel" parent="HBoxContainer2"]
+[node name="1" type="Panel" parent="HBoxContainer2"]
 material = ExtResource("2_1v8qu")
 custom_minimum_size = Vector2(180, 180)
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxTexture_y6sft")
 
-[node name="box" type="VBoxContainer" parent="HBoxContainer2/pointer"]
+[node name="pointer" type="TextureButton" parent="HBoxContainer2/1"]
+top_level = true
+light_mask = 7
+visibility_layer = 7
+z_index = 180
+layout_mode = 0
+offset_right = 180.0
+offset_bottom = 180.0
+
+[node name="box" type="VBoxContainer" parent="HBoxContainer2/1"]
 custom_minimum_size = Vector2(6.635, 56.825)
 layout_mode = 1
 anchors_preset = 15
@@ -144,10 +174,10 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-pivot_offset = Vector2(83.155, 91.38)
+pivot_offset = Vector2(90, 90)
 alignment = 1
 
-[node name="item_name" type="Label" parent="HBoxContainer2/pointer/box"]
+[node name="item_name" type="Label" parent="HBoxContainer2/1/box"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = SubResource("SystemFont_y6sft")
@@ -156,7 +186,7 @@ text = "pointer"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="price" type="Label" parent="HBoxContainer2/pointer/box"]
+[node name="price" type="Label" parent="HBoxContainer2/1/box"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = SubResource("SystemFont_y6sft")
@@ -165,7 +195,7 @@ text = "5 cookies"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="desc" type="Label" parent="HBoxContainer2/pointer/box"]
+[node name="desc" type="Label" parent="HBoxContainer2/1/box"]
 custom_minimum_size = Vector2(24.665, 5.205)
 layout_mode = 2
 theme_override_colors/font_color = Color(0.19434929, 0.19434926, 0.19434926, 1)
@@ -176,13 +206,22 @@ horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 2
 
-[node name="femboys" type="Panel" parent="HBoxContainer2"]
+[node name="2" type="Panel" parent="HBoxContainer2"]
 material = ExtResource("2_1v8qu")
 custom_minimum_size = Vector2(180, 180)
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxTexture_y6sft")
 
-[node name="box" type="VBoxContainer" parent="HBoxContainer2/femboys"]
+[node name="femboy" type="TextureButton" parent="HBoxContainer2/2"]
+top_level = true
+light_mask = 7
+visibility_layer = 7
+z_index = 180
+layout_mode = 0
+offset_right = 180.0
+offset_bottom = 180.0
+
+[node name="box" type="VBoxContainer" parent="HBoxContainer2/2"]
 custom_minimum_size = Vector2(6.635, 56.825)
 layout_mode = 1
 anchors_preset = -1
@@ -192,10 +231,10 @@ anchor_right = 0.95555556
 anchor_bottom = 0.9611111
 grow_horizontal = 2
 grow_vertical = 2
+pivot_offset = Vector2(90, 5.845)
 alignment = 1
-metadata/_edit_use_anchors_ = true
 
-[node name="item_name" type="Label" parent="HBoxContainer2/femboys/box"]
+[node name="item_name" type="Label" parent="HBoxContainer2/2/box"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = SubResource("SystemFont_y6sft")
@@ -204,7 +243,7 @@ text = "femboy"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="price" type="Label" parent="HBoxContainer2/femboys/box"]
+[node name="price" type="Label" parent="HBoxContainer2/2/box"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = SubResource("SystemFont_y6sft")
@@ -213,7 +252,7 @@ text = "50 cookies"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="desc" type="Label" parent="HBoxContainer2/femboys/box"]
+[node name="desc" type="Label" parent="HBoxContainer2/2/box"]
 custom_minimum_size = Vector2(24.665, 5.205)
 layout_mode = 2
 theme_override_colors/font_color = Color(0.19434929, 0.19434926, 0.19434926, 1)
@@ -224,13 +263,22 @@ horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 2
 
-[node name="golden_cookie" type="Panel" parent="HBoxContainer2"]
+[node name="3" type="Panel" parent="HBoxContainer2"]
 material = ExtResource("2_1v8qu")
 custom_minimum_size = Vector2(180, 180)
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxTexture_y6sft")
 
-[node name="box" type="VBoxContainer" parent="HBoxContainer2/golden_cookie"]
+[node name="golden_cookie" type="TextureButton" parent="HBoxContainer2/3"]
+top_level = true
+light_mask = 7
+visibility_layer = 7
+z_index = 180
+layout_mode = 0
+offset_right = 180.0
+offset_bottom = 180.0
+
+[node name="box" type="VBoxContainer" parent="HBoxContainer2/3"]
 custom_minimum_size = Vector2(6.635, 56.825)
 layout_mode = 1
 anchors_preset = -1
@@ -240,10 +288,11 @@ anchor_right = 0.95555556
 anchor_bottom = 0.9611111
 grow_horizontal = 2
 grow_vertical = 2
+pivot_offset = Vector2(90, 5.845)
 alignment = 1
 metadata/_edit_use_anchors_ = true
 
-[node name="item_name" type="Label" parent="HBoxContainer2/golden_cookie/box"]
+[node name="item_name" type="Label" parent="HBoxContainer2/3/box"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = SubResource("SystemFont_y6sft")
@@ -252,7 +301,7 @@ text = "golden cookie"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="price" type="Label" parent="HBoxContainer2/golden_cookie/box"]
+[node name="price" type="Label" parent="HBoxContainer2/3/box"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = SubResource("SystemFont_y6sft")
@@ -261,7 +310,7 @@ text = "150 cookies"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="desc" type="Label" parent="HBoxContainer2/golden_cookie/box"]
+[node name="desc" type="Label" parent="HBoxContainer2/3/box"]
 custom_minimum_size = Vector2(24.665, 5.205)
 layout_mode = 2
 theme_override_colors/font_color = Color(0.19434929, 0.19434926, 0.19434926, 1)
@@ -272,13 +321,22 @@ horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 2
 
-[node name="blahaj" type="Panel" parent="HBoxContainer2"]
+[node name="4" type="Panel" parent="HBoxContainer2"]
 material = ExtResource("2_1v8qu")
 custom_minimum_size = Vector2(180, 180)
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxTexture_m4ofw")
 
-[node name="box" type="VBoxContainer" parent="HBoxContainer2/blahaj"]
+[node name="blahaj" type="TextureButton" parent="HBoxContainer2/4"]
+top_level = true
+light_mask = 7
+visibility_layer = 7
+z_index = 180
+layout_mode = 0
+offset_right = 180.0
+offset_bottom = 180.0
+
+[node name="box" type="VBoxContainer" parent="HBoxContainer2/4"]
 custom_minimum_size = Vector2(6.635, 56.825)
 layout_mode = 1
 anchors_preset = -1
@@ -288,10 +346,11 @@ anchor_right = 0.95555556
 anchor_bottom = 0.9611111
 grow_horizontal = 2
 grow_vertical = 2
+pivot_offset = Vector2(90, 5.845)
 alignment = 1
 metadata/_edit_use_anchors_ = true
 
-[node name="item_name" type="Label" parent="HBoxContainer2/blahaj/box"]
+[node name="item_name" type="Label" parent="HBoxContainer2/4/box"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = SubResource("SystemFont_y6sft")
@@ -300,7 +359,7 @@ text = "blahaj"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="price" type="Label" parent="HBoxContainer2/blahaj/box"]
+[node name="price" type="Label" parent="HBoxContainer2/4/box"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = SubResource("SystemFont_y6sft")
@@ -309,7 +368,7 @@ text = "500 cookies"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="desc" type="Label" parent="HBoxContainer2/blahaj/box"]
+[node name="desc" type="Label" parent="HBoxContainer2/4/box"]
 custom_minimum_size = Vector2(24.665, 5.205)
 layout_mode = 2
 theme_override_colors/font_color = Color(0.19434929, 0.19434926, 0.19434926, 1)
@@ -320,13 +379,24 @@ horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 2
 
-[node name="useless_coin" type="Panel" parent="HBoxContainer2"]
+[node name="5" type="Panel" parent="HBoxContainer2"]
 material = ExtResource("2_1v8qu")
 custom_minimum_size = Vector2(180, 180)
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxTexture_m4ofw")
 
-[node name="box" type="VBoxContainer" parent="HBoxContainer2/useless_coin"]
+[node name="useless_coin" type="TextureButton" parent="HBoxContainer2/5"]
+top_level = true
+light_mask = 7
+visibility_layer = 7
+z_index = 180
+layout_mode = 0
+anchor_top = -0.4
+anchor_right = 1.0
+anchor_bottom = 1.0
+metadata/_edit_use_anchors_ = true
+
+[node name="box" type="VBoxContainer" parent="HBoxContainer2/5"]
 custom_minimum_size = Vector2(6.635, 56.825)
 layout_mode = 1
 anchors_preset = -1
@@ -337,10 +407,11 @@ anchor_bottom = 0.9611111
 offset_left = -3.0
 grow_horizontal = 2
 grow_vertical = 2
+pivot_offset = Vector2(90, 5.845)
 alignment = 1
 metadata/_edit_use_anchors_ = true
 
-[node name="item_name" type="Label" parent="HBoxContainer2/useless_coin/box"]
+[node name="item_name" type="Label" parent="HBoxContainer2/5/box"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = SubResource("SystemFont_y6sft")
@@ -349,7 +420,7 @@ text = "old coin"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="price" type="Label" parent="HBoxContainer2/useless_coin/box"]
+[node name="price" type="Label" parent="HBoxContainer2/5/box"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = SubResource("SystemFont_y6sft")
@@ -358,7 +429,7 @@ text = "1000 cookies"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="desc" type="Label" parent="HBoxContainer2/useless_coin/box"]
+[node name="desc" type="Label" parent="HBoxContainer2/5/box"]
 custom_minimum_size = Vector2(0, 25.395)
 layout_mode = 2
 theme_override_colors/font_color = Color(0.19434929, 0.19434926, 0.19434926, 1)
@@ -566,4 +637,12 @@ theme_override_font_sizes/font_size = 15
 text = "umm listen to lofi music ig idrk"
 autowrap_mode = 2
 
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = SubResource("AudioStreamInteractive_j14q8")
+
 [connection signal="pressed" from="TextureButton" to="." method="_on_texture_button_pressed"]
+[connection signal="pressed" from="HBoxContainer2/1/pointer" to="." method="_on_pointer_pressed"]
+[connection signal="pressed" from="HBoxContainer2/2/femboy" to="." method="_on_femboy_pressed"]
+[connection signal="pressed" from="HBoxContainer2/3/golden_cookie" to="." method="_on_golden_cookie_pressed"]
+[connection signal="pressed" from="HBoxContainer2/4/blahaj" to="." method="_on_blahaj_pressed"]
+[connection signal="pressed" from="HBoxContainer2/5/useless_coin" to="." method="_on_useless_coin_pressed"]

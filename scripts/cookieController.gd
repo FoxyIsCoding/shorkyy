@@ -66,9 +66,32 @@ func save_stats():
 		save_file.close()
 		print("Saved clicks: ", clicks)
 
+# -----------------------------------------------------------------------
+# SAVE AND SHOP
+# -----------------------------------------------------------------------
+
+var pointer_owned = 0
+var femboys_owned = 0
+var golden_cookie_owned = 0
+var blahaj_owned = 0
+var useless_coin_owned = 0
+var dvd_owned = 0
+var subway_surfers_owned = 0
+var slime_owned = 0
+var lofi_owned = 0
+
 func load_stats():
 	if not FileAccess.file_exists(SAVE_PATH):
 		clicks = 0
+		pointer_owned = 0
+		femboys_owned = 0
+		golden_cookie_owned = 0
+		blahaj_owned = 0
+		useless_coin_owned = 0
+		dvd_owned = 0
+		subway_surfers_owned = 0
+		slime_owned = 0
+		lofi_owned = 0
 		return
 	
 	var save_file = FileAccess.open(SAVE_PATH, FileAccess.READ)
@@ -81,6 +104,13 @@ func load_stats():
 		if parse_result == OK:
 			var save_data = json.data
 			clicks = save_data.get("clicks", 0)
-			print("Loaded clicks: ", clicks)
-			cps = save_data.get("cps", 0)
-			print("Loaded cps: ", cps)
+			pointer_owned = save_data.get("pointer_owned", 0)
+			femboys_owned = save_data.get("femboys_owned", 0)
+			golden_cookie_owned = save_data.get("golden_cookie_owned", 0)
+			blahaj_owned = save_data.get("blahaj_owned", 0)
+			useless_coin_owned = save_data.get("useless_coin_owned", 0)
+			dvd_owned = save_data.get("dvd_owned", 0)
+			subway_surfers_owned = save_data.get("subway_surfers_owned", 0)
+			slime_owned = save_data.get("slime_owned", 0)
+			lofi_owned = save_data.get("lofi_owned", 0)
+			print("Game loaded! Clicks: ", clicks)
