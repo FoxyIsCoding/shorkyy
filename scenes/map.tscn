@@ -55,8 +55,8 @@ script = ExtResource("1_n1psn")
 [node name="bg" type="ColorRect" parent="."]
 offset_left = -24.0
 offset_top = -21.0
-offset_right = 1202.0
-offset_bottom = 675.0
+offset_right = 1943.0
+offset_bottom = 1096.0
 size_flags_horizontal = 4
 color = Color(1, 1, 0.88235295, 1)
 
@@ -64,8 +64,8 @@ color = Color(1, 1, 0.88235295, 1)
 material = SubResource("ShaderMaterial_6k6j1")
 offset_left = -25.0
 offset_top = -21.0
-offset_right = 1202.0
-offset_bottom = 677.0
+offset_right = 1924.0
+offset_bottom = 1088.0
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = SubResource("AudioStreamRandomizer_hrmi8")
@@ -73,10 +73,10 @@ autoplay = true
 
 [node name="shopBTN" type="TextureButton" parent="."]
 material = SubResource("ShaderMaterial_mo32q")
-offset_left = 973.0
-offset_top = 545.0
-offset_right = 1152.0
-offset_bottom = 648.0
+offset_left = 1737.0001
+offset_top = 971.0
+offset_right = 1916.0001
+offset_bottom = 1074.0
 rotation = 0.0021059138
 texture_normal = ExtResource("5_2klcf")
 texture_pressed = ExtResource("6_nakos")
@@ -85,9 +85,10 @@ texture_focused = ExtResource("5_2klcf")
 
 [node name="menuBTN" type="TextureButton" parent="."]
 material = SubResource("ShaderMaterial_mo32q")
-offset_left = 973.0
-offset_right = 1152.0
-offset_bottom = 103.0
+offset_left = 1737.0
+offset_top = 2.0
+offset_right = 1916.0
+offset_bottom = 105.0
 rotation = 0.0021059138
 texture_normal = ExtResource("8_be0no")
 texture_pressed = ExtResource("9_blm8a")
@@ -97,10 +98,10 @@ texture_disabled = ExtResource("8_be0no")
 [node name="cookiee" type="TextureButton" parent="."]
 unique_name_in_owner = true
 material = ExtResource("14_c70he")
-offset_left = 270.0
-offset_top = 85.0
-offset_right = 882.0
-offset_bottom = 697.0
+offset_left = 670.0
+offset_top = 237.00003
+offset_right = 1282.0
+offset_bottom = 849.0
 pivot_offset = Vector2(300, 298)
 size_flags_horizontal = 4
 size_flags_vertical = 4
@@ -112,10 +113,10 @@ stream = ExtResource("13_gw3fx")
 
 [node name="clicks" type="Label" parent="."]
 material = ExtResource("14_c70he")
-offset_left = 425.00003
-offset_top = -3.8143692
-offset_right = 704.0
-offset_bottom = 130.18564
+offset_left = 825.0002
+offset_top = 148.18568
+offset_right = 1104.0002
+offset_bottom = 282.18567
 rotation = -0.00066534686
 theme_override_colors/font_color = Color(0.099985994, 0.099985994, 0.099985994, 1)
 theme_override_fonts/font = SubResource("SystemFont_n1psn")
@@ -126,10 +127,10 @@ vertical_alignment = 1
 
 [node name="cps" type="Label" parent="."]
 material = SubResource("ShaderMaterial_m335s")
-offset_left = 389.0
-offset_top = 61.185623
-offset_right = 740.0533
-offset_bottom = 195.18562
+offset_left = 788.99994
+offset_top = 213.18568
+offset_right = 1140.0532
+offset_bottom = 347.18567
 rotation = -0.00066534686
 theme_override_colors/font_color = Color(0.099985994, 0.099985994, 0.099985994, 1)
 theme_override_fonts/font = SubResource("SystemFont_n1psn")

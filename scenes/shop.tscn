@@ -105,28 +105,35 @@ material = SubResource("ShaderMaterial_24it5")
 layout_mode = 0
 offset_left = -25.0
 offset_top = -21.0
-offset_right = 1202.0
-offset_bottom = 677.0
+offset_right = 1961.0
+offset_bottom = 1136.0
 
 [node name="TextureButton" type="TextureButton" parent="."]
 material = SubResource("ShaderMaterial_1v8qu")
-layout_mode = 0
-offset_left = 1074.0
-offset_top = 34.999996
-offset_right = 1209.0
-offset_bottom = 172.0
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.9364584
+anchor_top = 0.008333335
+anchor_right = 1.0004923
+anchor_bottom = 0.096639946
+offset_right = 227.72217
+offset_bottom = 177.8957
+grow_horizontal = 2
+grow_vertical = 2
 rotation = -0.002216311
 scale = Vector2(0.35, 0.35)
 texture_normal = ExtResource("1_1l46r")
 texture_pressed = ExtResource("2_032fp")
 texture_hover = ExtResource("3_2fc2m")
+stretch_mode = 3
+metadata/_edit_use_anchors_ = true
 
 [node name="HBoxContainer" type="HBoxContainer" parent="."]
 layout_mode = 1
 anchors_preset = -1
 anchor_right = 1.0
 anchor_bottom = 0.116000004
-offset_right = 4263.7896
+offset_right = 7448.421
 offset_bottom = 550.83203
 grow_horizontal = 2
 scale = Vector2(0.19, 0.19)
@@ -147,8 +154,8 @@ text = "69 Cookies"
 [node name="HBoxContainer2" type="HBoxContainer" parent="."]
 layout_mode = 0
 offset_top = 92.0
-offset_right = 1150.0
-offset_bottom = 271.0
+offset_right = 1918.0
+offset_bottom = 272.0
 alignment = 1
 
 [node name="1" type="Panel" parent="HBoxContainer2"]
@@ -159,12 +166,13 @@ theme_override_styles/panel = SubResource("StyleBoxTexture_y6sft")
 
 [node name="pointer" type="TextureButton" parent="HBoxContainer2/1"]
 top_level = true
-light_mask = 7
-visibility_layer = 7
-z_index = 180
 layout_mode = 0
-offset_right = 180.0
-offset_bottom = 180.0
+anchor_left = 0.2609375
+anchor_top = 0.08425926
+anchor_right = 0.3546875
+anchor_bottom = 0.25092593
+offset_left = -3.0517578e-05
+metadata/_edit_use_anchors_ = true
 
 [node name="box" type="VBoxContainer" parent="HBoxContainer2/1"]
 custom_minimum_size = Vector2(6.635, 56.825)
@@ -214,12 +222,12 @@ theme_override_styles/panel = SubResource("StyleBoxTexture_y6sft")
 
 [node name="femboy" type="TextureButton" parent="HBoxContainer2/2"]
 top_level = true
-light_mask = 7
-visibility_layer = 7
-z_index = 180
 layout_mode = 0
-offset_right = 180.0
-offset_bottom = 180.0
+anchor_left = 0.35625
+anchor_top = 0.08240741
+anchor_right = 0.45
+anchor_bottom = 0.24907407
+metadata/_edit_use_anchors_ = true
 
 [node name="box" type="VBoxContainer" parent="HBoxContainer2/2"]
 custom_minimum_size = Vector2(6.635, 56.825)
@@ -271,12 +279,12 @@ theme_override_styles/panel = SubResource("StyleBoxTexture_y6sft")
 
 [node name="golden_cookie" type="TextureButton" parent="HBoxContainer2/3"]
 top_level = true
-light_mask = 7
-visibility_layer = 7
-z_index = 180
 layout_mode = 0
-offset_right = 180.0
-offset_bottom = 180.0
+anchor_left = 0.453125
+anchor_top = 0.085185185
+anchor_right = 0.546875
+anchor_bottom = 0.25185186
+metadata/_edit_use_anchors_ = true
 
 [node name="box" type="VBoxContainer" parent="HBoxContainer2/3"]
 custom_minimum_size = Vector2(6.635, 56.825)
@@ -329,12 +337,12 @@ theme_override_styles/panel = SubResource("StyleBoxTexture_m4ofw")
 
 [node name="blahaj" type="TextureButton" parent="HBoxContainer2/4"]
 top_level = true
-light_mask = 7
-visibility_layer = 7
-z_index = 180
 layout_mode = 0
-offset_right = 180.0
-offset_bottom = 180.0
+anchor_left = 0.54791665
+anchor_top = 0.085185185
+anchor_right = 0.64166665
+anchor_bottom = 0.25185186
+metadata/_edit_use_anchors_ = true
 
 [node name="box" type="VBoxContainer" parent="HBoxContainer2/4"]
 custom_minimum_size = Vector2(6.635, 56.825)
@@ -387,13 +395,12 @@ theme_override_styles/panel = SubResource("StyleBoxTexture_m4ofw")
 
 [node name="useless_coin" type="TextureButton" parent="HBoxContainer2/5"]
 top_level = true
-light_mask = 7
-visibility_layer = 7
-z_index = 180
-layout_mode = 0
-anchor_top = -0.4
-anchor_right = 1.0
-anchor_bottom = 1.0
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.6440972
+anchor_top = 0.08611111
+anchor_right = 0.73854166
+anchor_bottom = 0.24814814
 metadata/_edit_use_anchors_ = true
 
 [node name="box" type="VBoxContainer" parent="HBoxContainer2/5"]
@@ -446,7 +453,7 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_top = 279.0
+offset_top = 323.0
 grow_horizontal = 2
 grow_vertical = 2
 horizontal_scroll_mode = 0
