@@ -39,11 +39,14 @@ func load_level():
 
 
 func _on_start_btn_pressed():
+	$audio/button.play()
 	shake_button()
 	load_level()
 
 func _on_exit_btn_pressed():
+	$audio/button.play()
 	get_tree().quit()
 
 func _on_setting_btn_pressed():
+	$audio/button.play()
 	shake_button()

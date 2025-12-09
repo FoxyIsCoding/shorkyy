@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=4 uid="uid://dl6bc7l6tovxu"]
+[gd_scene load_steps=29 format=4 uid="uid://dl6bc7l6tovxu"]
 
 [ext_resource type="Script" uid="uid://bdk4tr0tsjmc1" path="res://scripts/menu/button_controller.gd" id="1_con2f"]
 [ext_resource type="Texture2D" uid="uid://00ijnwkvi8im" path="res://assets/UI/arrow_thingy.png" id="1_yqeox"]
@@ -7,6 +7,7 @@
 [ext_resource type="AudioStream" uid="uid://b41a0gkk1ynpw" path="res://assets/Chilling At Nemu's Place.mp3" id="2_vjb58"]
 [ext_resource type="Texture2D" uid="uid://crhgifogudbdj" path="res://assets/noise.jpg" id="3_v86rl"]
 [ext_resource type="Material" uid="uid://rsbyyhr0bllh" path="res://shaders/paper.tres" id="4_13sgg"]
+[ext_resource type="AudioStream" uid="uid://bmyx63o6cy3ai" path="res://assets/400 Sounds Pack/UI/pop_1.wav" id="8_13sgg"]
 
 [sub_resource type="Image" id="Image_4h3mk"]
 data = {
@@ -1236,6 +1237,13 @@ flat = true
 stream = ExtResource("2_vjb58")
 autoplay = true
 parameters/looping = true
+
+[node name="audio" type="Node" parent="."]
+
+[node name="button" type="AudioStreamPlayer" parent="audio"]
+stream = ExtResource("8_13sgg")
+volume_db = -5.473
+pitch_scale = 1.74
 
 [connection signal="pressed" from="BoxContainer/start_btn" to="." method="_on_start_btn_pressed"]
 [connection signal="pressed" from="BoxContainer/setting_btn" to="." method="_on_setting_btn_pressed"]

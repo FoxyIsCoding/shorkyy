@@ -14,6 +14,7 @@
 [ext_resource type="Texture2D" uid="uid://cvs8gppnfrfps" path="res://assets/my majestic art made in MS paint lol/ui art/box_recommended_new.png" id="7_y6sft"]
 [ext_resource type="AudioStream" uid="uid://rqjpq6gdovj" path="res://assets/400 Sounds Pack/UI/cancel.wav" id="13_7mqwv"]
 [ext_resource type="AudioStream" uid="uid://c0valxrffh8lb" path="res://assets/400 Sounds Pack/UI/pop_4.wav" id="14_7mqwv"]
+[ext_resource type="AudioStream" uid="uid://bmyx63o6cy3ai" path="res://assets/400 Sounds Pack/UI/pop_1.wav" id="15_gobkm"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_24it5"]
 shader = ExtResource("2_44xle")
@@ -63,15 +64,6 @@ texture_margin_bottom = 2.0
 axis_stretch_horizontal = 2
 axis_stretch_vertical = 2
 
-[sub_resource type="AudioStreamInteractive" id="AudioStreamInteractive_j14q8"]
-clip_count = 2
-clip_0/name = &"fail"
-clip_0/stream = ExtResource("13_7mqwv")
-clip_0/auto_advance = 0
-clip_1/name = &"buy"
-clip_1/stream = ExtResource("14_7mqwv")
-clip_1/auto_advance = 0
-
 [node name="Shop" type="Control" node_paths=PackedStringArray("pointer_object", "pointer_price_object", "femboys_object", "femboys_price_object", "golden_cookie_object", "golden_cookie_price_object", "blahaj_object", "blahaj_price_object", "useless_coin_object", "useless_coin_price_object")]
 layout_mode = 3
 anchors_preset = 15
@@ -79,6 +71,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+pivot_offset = Vector2(960, 540)
 script = ExtResource("1_032fp")
 pointer_object = NodePath("HBoxContainer2/1")
 pointer_price_object = NodePath("HBoxContainer2/1/box/price")
@@ -96,6 +89,10 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = -202.0
+offset_top = -110.0
+offset_right = 198.0
+offset_bottom = 129.0
 grow_horizontal = 2
 grow_vertical = 2
 color = Color(1, 1, 0.88235295, 1)
@@ -108,7 +105,7 @@ offset_top = -21.0
 offset_right = 1961.0
 offset_bottom = 1136.0
 
-[node name="TextureButton" type="TextureButton" parent="."]
+[node name="closeBTN" type="TextureButton" parent="."]
 material = SubResource("ShaderMaterial_1v8qu")
 layout_mode = 1
 anchors_preset = -1
@@ -203,6 +200,15 @@ text = "5 cookies"
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="owned" type="Label" parent="HBoxContainer2/1/box"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = SubResource("SystemFont_y6sft")
+theme_override_font_sizes/font_size = 10
+text = "0 Owned"
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [node name="desc" type="Label" parent="HBoxContainer2/1/box"]
 custom_minimum_size = Vector2(24.665, 5.205)
 layout_mode = 2
@@ -257,6 +263,15 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = SubResource("SystemFont_y6sft")
 theme_override_font_sizes/font_size = 16
 text = "50 cookies"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="owned" type="Label" parent="HBoxContainer2/2/box"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = SubResource("SystemFont_y6sft")
+theme_override_font_sizes/font_size = 10
+text = "0 Owned"
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -318,6 +333,15 @@ text = "150 cookies"
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="owned" type="Label" parent="HBoxContainer2/3/box"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = SubResource("SystemFont_y6sft")
+theme_override_font_sizes/font_size = 10
+text = "0 Owned"
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [node name="desc" type="Label" parent="HBoxContainer2/3/box"]
 custom_minimum_size = Vector2(24.665, 5.205)
 layout_mode = 2
@@ -373,6 +397,15 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = SubResource("SystemFont_y6sft")
 theme_override_font_sizes/font_size = 16
 text = "500 cookies"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="owned" type="Label" parent="HBoxContainer2/4/box"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = SubResource("SystemFont_y6sft")
+theme_override_font_sizes/font_size = 10
+text = "0 Owned"
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -433,6 +466,15 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = SubResource("SystemFont_y6sft")
 theme_override_font_sizes/font_size = 16
 text = "1000 cookies"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="owned" type="Label" parent="HBoxContainer2/5/box"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = SubResource("SystemFont_y6sft")
+theme_override_font_sizes/font_size = 10
+text = "0 Owned"
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -644,10 +686,20 @@ theme_override_font_sizes/font_size = 15
 text = "umm listen to lofi music ig idrk"
 autowrap_mode = 2
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = SubResource("AudioStreamInteractive_j14q8")
+[node name="audio" type="Node" parent="."]
 
-[connection signal="pressed" from="TextureButton" to="." method="_on_texture_button_pressed"]
+[node name="buy_done" type="AudioStreamPlayer" parent="audio"]
+stream = ExtResource("14_7mqwv")
+
+[node name="buy_fail" type="AudioStreamPlayer" parent="audio"]
+stream = ExtResource("13_7mqwv")
+
+[node name="button" type="AudioStreamPlayer" parent="audio"]
+stream = ExtResource("15_gobkm")
+volume_db = -5.473
+pitch_scale = 1.74
+
+[connection signal="pressed" from="closeBTN" to="." method="_on_close_btn_pressed"]
 [connection signal="pressed" from="HBoxContainer2/1/pointer" to="." method="_on_pointer_pressed"]
 [connection signal="pressed" from="HBoxContainer2/2/femboy" to="." method="_on_femboy_pressed"]
 [connection signal="pressed" from="HBoxContainer2/3/golden_cookie" to="." method="_on_golden_cookie_pressed"]
