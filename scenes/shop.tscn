@@ -153,12 +153,16 @@ layout_mode = 0
 offset_top = 92.0
 offset_right = 1918.0
 offset_bottom = 272.0
+pivot_offset = Vector2(959, 90)
 alignment = 1
+metadata/_edit_use_anchors_ = true
 
 [node name="1" type="Panel" parent="HBoxContainer2"]
 material = ExtResource("2_1v8qu")
 custom_minimum_size = Vector2(180, 180)
 layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
 theme_override_styles/panel = SubResource("StyleBoxTexture_y6sft")
 
 [node name="pointer" type="TextureButton" parent="HBoxContainer2/1"]
@@ -700,8 +704,14 @@ volume_db = -5.473
 pitch_scale = 1.74
 
 [connection signal="pressed" from="closeBTN" to="." method="_on_close_btn_pressed"]
+[connection signal="mouse_entered" from="HBoxContainer2/1" to="." method="mouse_entered_1"]
+[connection signal="mouse_entered" from="HBoxContainer2/1/pointer" to="." method="pointer_mouse_enter"]
 [connection signal="pressed" from="HBoxContainer2/1/pointer" to="." method="_on_pointer_pressed"]
+[connection signal="mouse_entered" from="HBoxContainer2/2/femboy" to="." method="femboy_mouse_enter"]
 [connection signal="pressed" from="HBoxContainer2/2/femboy" to="." method="_on_femboy_pressed"]
+[connection signal="mouse_entered" from="HBoxContainer2/3/golden_cookie" to="." method="golden_cookie_mouse_enter"]
 [connection signal="pressed" from="HBoxContainer2/3/golden_cookie" to="." method="_on_golden_cookie_pressed"]
+[connection signal="mouse_entered" from="HBoxContainer2/4/blahaj" to="." method="blahaj_mouse_enter"]
 [connection signal="pressed" from="HBoxContainer2/4/blahaj" to="." method="_on_blahaj_pressed"]
+[connection signal="mouse_entered" from="HBoxContainer2/5/useless_coin" to="." method="useless_coin_mouse_enter"]
 [connection signal="pressed" from="HBoxContainer2/5/useless_coin" to="." method="_on_useless_coin_pressed"]

@@ -1,8 +1,6 @@
 extends TextureButton
 
 # exports
-@export_category("Starter")
-@export var cps: int
 @export_category("Animation settings")
 @export var shrink_amount: Vector2 = Vector2(0.9, 0.9)
 @export var rotate_amount: float = -0.1 
@@ -17,18 +15,20 @@ var tween: Tween
 var controller = load("res://scripts/shop/main_controller.gd")
 const SAVE_PATH = "user://click_data.save"
 
+var cps = controller.pointer_owned
+
 
 #funcs 
 func _ready():
-	
-	
 	original_scale = scale
 	original_rotation = rotation
 	controller.load_stats()
-	$"../clicks".text = str(controller.clicks)
 	$"../cps".text = str(cps) + "CPS"
+	$"../clicks".text = str(controller.clicks)
+	
 
 func _on_button_down():
+	$"../cps".text = str(controller.cps) + "CPS"
 	$"poper umm soun thingy".play(0)
 	
 	controller.clicks += 1

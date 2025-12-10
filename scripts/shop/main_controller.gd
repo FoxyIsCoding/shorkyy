@@ -1,16 +1,14 @@
 extends Control
 static var clicks: int
 const SAVE_PATH = "user://click_data.save"
+static var cps = pointer_owned
 
 func _ready():
 	load_stats()
 	load_price()
 	load_owned()
 	$HBoxContainer/cookies.text = str(clicks)
-
-func _on_close_btn_pressed():
-	$audio/button.play()
-	get_tree().change_scene_to_file("res://scenes/map.tscn")
+	cps = pointer_owned
 
 
 #region Var Exports
@@ -72,11 +70,17 @@ static var lofi_price: int = 1000
 @export var lofi_sale = true
 static var lofi_owned: int = 0
 @export var lofi_price_object: Label
+
+# more 
+
+
 #endregion
 
 # --------------------------------------------------------------------------
 # SHOP INITIALIZATION
 # --------------------------------------------------------------------------
+
+#region PRICE LOADING + OWNED COUNT
 func load_price():
 
 	if pointer_price_object:
@@ -104,11 +108,13 @@ func load_owned():
 	$"HBoxContainer2/3/box/owned".text = str(golden_cookie_owned) + "  Owned"
 	$"HBoxContainer2/2/box/owned".text = str(femboys_owned) + "  Owned"
 	$"HBoxContainer2/1/box/owned".text = str(pointer_owned) + "  Owned"
+#endregion
 
 # --------------------------------------------------------------------------
 # BUY MECHANICS 
 # --------------------------------------------------------------------------
 
+#region BUY FUNCTIONS
 func buy(item_name: String) -> bool:
 	var price := 0
 	var sale := false
@@ -209,18 +215,21 @@ func buy(item_name: String) -> bool:
 	# --------------------------------------------------------------------
 	# SUCCESS → ZOOM PULSE
 	# --------------------------------------------------------------------
-	ui_zoom_pulse(ui_root)
+	ui_zoom_pulse(ui_root,0.06)
 
 	return true
+#endregion
 
 
 func update_ui():
 	$HBoxContainer/cookies.text = str(clicks)
 	load_price()
+	
 
 # --------------------------------------------------------------------------
 # SAVE SYSTEM
 # --------------------------------------------------------------------------
+#region SAVE
 static func save_shop():
 	var save_file = FileAccess.open(SAVE_PATH, FileAccess.WRITE)
 	if save_file:
@@ -249,7 +258,9 @@ static func save_shop():
 		save_file.store_line(JSON.stringify(save_data))
 		save_file.close()
 		print("Game saved!")
+#endregion
 
+#region LOAD SAVE
 static func load_stats():
 	if not FileAccess.file_exists(SAVE_PATH):
 		clicks = 0
@@ -296,7 +307,7 @@ static func load_stats():
 			subway_surfers_price = save_data.get("subway_surfers_price", subway_surfers_price)
 			slime_price = save_data.get("slime_price", slime_price)
 			lofi_price = save_data.get("lofi_price", lofi_price)
-			
+			cps = pointer_owned
 			print("=== GAME LOADED ===")
 			print("Clicks: ", clicks)
 			print("--- OWNED ITEMS ---")
@@ -320,10 +331,13 @@ static func load_stats():
 			print("Slime Price: ", slime_price)
 			print("Lofi Girl Price: ", lofi_price)
 			print("===================")
+#endregion
 
 # --------------------------------------------------------------------------
-# BUTTONS FOR BUY
+# Events and button clicks
 # --------------------------------------------------------------------------
+
+#region Events + button clicks
 
 func _on_pointer_pressed():
 	buy("pointer")
@@ -344,10 +358,21 @@ func _on_blahaj_pressed():
 func _on_useless_coin_pressed():
 	buy("useless_coin")
 
+func _on_close_btn_pressed():
+	$audio/button.play()
+	get_tree().change_scene_to_file("res://scenes/map.tscn")
+#endregion
+
+
+# --------------------------------------------------------------------------
+# Effects
+# --------------------------------------------------------------------------
+
 
 var shake_tween: Tween
 var zoom_tween: Tween
 
+#region UI SHAKE
 var original_positions: Dictionary = {} 
 
 func ui_shake(target: Control, strength: float = 12.0, duration: float = 0.2) -> void:
@@ -371,8 +396,9 @@ func ui_shake(target: Control, strength: float = 12.0, duration: float = 0.2) ->
 		shake_tween.tween_property(target, "position", original_pos + offset, duration / 6)
 
 	shake_tween.tween_property(target, "position", original_pos, duration / 6)
+#endregion
 
-
+#region UI ZOOM
 var original_scales: Dictionary = {} 
 
 func ui_zoom_pulse(target: Control, zoom_amount: float = 0.1, duration: float = 0.25) -> void:
@@ -391,3 +417,54 @@ func ui_zoom_pulse(target: Control, zoom_amount: float = 0.1, duration: float = 
 	
 	zoom_tween.tween_property(target, "scale", zoomed_scale, duration)
 	zoom_tween.tween_property(target, "scale", original_scale, duration * 1.2)
+#endregion
+
+var panel_tween: Tween = null
+var panel_original_scale: Dictionary = {}
+var panel_original_pivot: Dictionary = {}
+
+func scale_panel(panel: Panel, target_scale: Vector2, duration: float = 0.3) -> void:
+	if not panel:
+		push_error("Panel is null!")
+		return
+
+	if panel_tween and panel_tween.is_valid():
+		panel_tween.kill()
+
+	if not panel_original_scale.has(panel):
+		panel_original_scale[panel] = panel.scale
+	if not panel_original_pivot.has(panel):
+		panel_original_pivot[panel] = panel.pivot_offset
+
+	panel.scale = panel_original_scale[panel]
+	panel.pivot_offset = Vector2(90, 90)
+	
+	panel_tween = create_tween()
+	panel_tween.set_trans(Tween.TRANS_CUBIC)
+	panel_tween.set_ease(Tween.EASE_OUT)
+	
+	panel_tween.tween_property(panel, "scale", target_scale, duration)
+	
+	panel_tween.tween_property(panel, "scale", panel_original_scale[panel], duration)
+	
+
+
+
+func pointer_mouse_enter():
+	scale_panel($"HBoxContainer2/1", Vector2(1.05, 1.05), 0.3)
+
+func femboy_mouse_enter():
+	scale_panel($"HBoxContainer2/2", Vector2(1.05, 1.05), 0.3)
+
+func golden_cookie_mouse_enter():
+	scale_panel($"HBoxContainer2/3", Vector2(1.05, 1.05), 0.3)
+
+func blahaj_mouse_enter():
+	scale_panel($"HBoxContainer2/4", Vector2(1.05, 1.05), 0.3)
+
+
+func useless_coin_mouse_enter():
+	scale_panel($"HBoxContainer2/5", Vector2(1.05, 1.05), 0.3)
+ 	
+
+# ------
