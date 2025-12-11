@@ -6,6 +6,6 @@
 [resource]
 shader = ExtResource("1_0pcpu")
 shader_parameter/scale = Vector2(1, 1)
-shader_parameter/strength = 0.13
+shader_parameter/strength = 0.12
 shader_parameter/fps = 6.0
 shader_parameter/noise = ExtResource("2_sapf2")

@@ -502,6 +502,7 @@ anchor_bottom = 1.0
 offset_top = 323.0
 grow_horizontal = 2
 grow_vertical = 2
+pivot_offset = Vector2(960, 378.5)
 horizontal_scroll_mode = 0
 
 [node name="horizontal_container" type="HFlowContainer" parent="extra"]
@@ -555,6 +556,16 @@ theme_override_font_sizes/font_size = 15
 text = "yk that old DVD player bouncy animation"
 autowrap_mode = 2
 
+[node name="dvd" type="TextureButton" parent="extra/horizontal_container/dvd"]
+top_level = true
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.2140625
+anchor_top = 0.30555555
+anchor_right = 0.7859375
+anchor_bottom = 0.43425927
+metadata/_edit_use_anchors_ = true
+
 [node name="subway_surfers" type="Panel" parent="extra/horizontal_container"]
 material = SubResource("ShaderMaterial_44xle")
 custom_minimum_size = Vector2(1103.155, 150)
@@ -600,10 +611,21 @@ theme_override_font_sizes/font_size = 15
 text = "nah if you need to buy ts your attention span is indeed low"
 autowrap_mode = 2
 
+[node name="subway_surfers" type="TextureButton" parent="extra/horizontal_container/subway_surfers"]
+top_level = true
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.2140625
+anchor_top = 0.44629633
+anchor_right = 0.7859375
+anchor_bottom = 0.5749999
+metadata/_edit_use_anchors_ = true
+
 [node name="slime" type="Panel" parent="extra/horizontal_container"]
 material = SubResource("ShaderMaterial_44xle")
 custom_minimum_size = Vector2(1103.155, 150)
 layout_mode = 2
+size_flags_horizontal = 3
 theme_override_styles/panel = SubResource("StyleBoxTexture_ajxib")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="extra/horizontal_container/slime"]
@@ -644,6 +666,16 @@ theme_override_fonts/font = SubResource("SystemFont_y6sft")
 theme_override_font_sizes/font_size = 15
 text = "that ASMR slime videos"
 autowrap_mode = 2
+
+[node name="slime" type="TextureButton" parent="extra/horizontal_container/slime"]
+top_level = true
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.2140625
+anchor_top = 0.58703697
+anchor_right = 0.7859375
+anchor_bottom = 0.71574074
+metadata/_edit_use_anchors_ = true
 
 [node name="lofi" type="Panel" parent="extra/horizontal_container"]
 material = SubResource("ShaderMaterial_44xle")
@@ -690,6 +722,16 @@ theme_override_font_sizes/font_size = 15
 text = "umm listen to lofi music ig idrk"
 autowrap_mode = 2
 
+[node name="lofi" type="TextureButton" parent="extra/horizontal_container/lofi"]
+top_level = true
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.2140625
+anchor_top = 0.7351852
+anchor_right = 0.7859375
+anchor_bottom = 0.86388886
+metadata/_edit_use_anchors_ = true
+
 [node name="audio" type="Node" parent="."]
 
 [node name="buy_done" type="AudioStreamPlayer" parent="audio"]
@@ -715,3 +757,7 @@ pitch_scale = 1.74
 [connection signal="pressed" from="HBoxContainer2/4/blahaj" to="." method="_on_blahaj_pressed"]
 [connection signal="mouse_entered" from="HBoxContainer2/5/useless_coin" to="." method="useless_coin_mouse_enter"]
 [connection signal="pressed" from="HBoxContainer2/5/useless_coin" to="." method="_on_useless_coin_pressed"]
+[connection signal="mouse_entered" from="extra/horizontal_container/dvd/dvd" to="." method="dvd_mouse_enter"]
+[connection signal="mouse_entered" from="extra/horizontal_container/subway_surfers/subway_surfers" to="." method="subway_surfers_mouse_enter"]
+[connection signal="mouse_entered" from="extra/horizontal_container/slime/slime" to="." method="slime_mouse_enter"]
+[connection signal="mouse_entered" from="extra/horizontal_container/lofi/lofi" to="." method="lofi_mouse_enter"]

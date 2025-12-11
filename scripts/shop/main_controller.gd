@@ -437,7 +437,7 @@ func scale_panel(panel: Panel, target_scale: Vector2, duration: float = 0.3) -> 
 		panel_original_pivot[panel] = panel.pivot_offset
 
 	panel.scale = panel_original_scale[panel]
-	panel.pivot_offset = Vector2(90, 90)
+	panel.pivot_offset = Vector2(120, 120)
 	
 	panel_tween = create_tween()
 	panel_tween.set_trans(Tween.TRANS_CUBIC)
@@ -468,3 +468,19 @@ func useless_coin_mouse_enter():
  	
 
 # ------
+
+
+func dvd_mouse_enter():
+	scale_panel($extra/horizontal_container/dvd, Vector2(1.05, 1.05), 0.3)
+
+
+func subway_surfers_mouse_enter():
+	scale_panel($extra/horizontal_container/subway_surfers, Vector2(1.05, 1.05), 0.3)
+
+
+func slime_mouse_enter():
+	scale_panel($extra/horizontal_container/slime, Vector2(1.05, 1.05), 0.3)
+
+
+func lofi_mouse_enter():
+	scale_panel($extra/horizontal_container/lofi, Vector2(1.05, 1.05), 0.3)

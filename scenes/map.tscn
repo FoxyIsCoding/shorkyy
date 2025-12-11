@@ -184,6 +184,7 @@ anchor_bottom = 0.83148146
 metadata/_edit_use_anchors_ = true
 
 [node name="placeholder" type="VideoStreamPlayer" parent="videos/VBoxContainer"]
+visible = false
 layout_mode = 2
 volume_db = -80.0
 loop = true

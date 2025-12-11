@@ -51,7 +51,7 @@ func _on_button_up():
 		tween.kill()
 	tween = create_tween()
 	tween.set_parallel(true)
-	tween.tween_property(self, "scale", original_scale, tween_duration)
+	tween.tween_property( self, "scale", original_scale, tween_duration)
 	tween.tween_property(self, "rotation", original_rotation, tween_duration)
 
 func _on_tween_done():

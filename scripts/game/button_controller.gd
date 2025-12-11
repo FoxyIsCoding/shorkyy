@@ -12,3 +12,4 @@ func _on_menu_btn_pressed():
 	controller.save_shop()
 	$audio/button.play()
 	get_tree().change_scene_to_file("res://scenes/menu.tscn")
+		   
