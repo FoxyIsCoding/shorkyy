@@ -24,8 +24,16 @@ func _ready():
 	original_rotation = rotation
 	controller.load_stats()
 	$"../cps".text = str(cps) + "CPS"
+	$"../cps".text = str(controller.cps) + "CPS"
 	$"../clicks".text = str(controller.clicks)
 	
+
+
+func _on_timer_timeout() -> void:
+	controller.clicks += controller.pointer_owned
+	$"../clicks".text = str(controller.clicks)
+	$"../cps".text = str(controller.cps) + "CPS"
+
 
 func _on_button_down():
 	$"../cps".text = str(controller.cps) + "CPS"

@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://vt0ni10ua5di"]
+[gd_scene load_steps=34 format=3 uid="uid://vt0ni10ua5di"]
 
 [ext_resource type="AudioStream" uid="uid://b41a0gkk1ynpw" path="res://assets/Chilling At Nemu's Place.mp3" id="1_0cso3"]
 [ext_resource type="Shader" uid="uid://dlg8lpardycni" path="res://shaders/paper.gdshader" id="1_c00ee"]
@@ -19,7 +19,14 @@
 [ext_resource type="Material" uid="uid://rsbyyhr0bllh" path="res://shaders/paper.tres" id="14_c70he"]
 [ext_resource type="Shader" uid="uid://fvec0iwwupyw" path="res://shaders/that_black_circle_effect.gdshader" id="18_mo32q"]
 [ext_resource type="AudioStream" uid="uid://bmyx63o6cy3ai" path="res://assets/400 Sounds Pack/UI/pop_1.wav" id="19_6k6j1"]
-[ext_resource type="Texture2D" uid="uid://d1l5735yoyr52" path="res://assets/my majestic art made in MS paint lol/ui art/sillest cookie.png" id="20_m335s"]
+[ext_resource type="Texture2D" uid="uid://bwnuqm2w050f0" path="res://assets/the dozens of random femboys for the shop/wypher_ma_bou.png" id="20_m335s"]
+[ext_resource type="Texture2D" uid="uid://b264jm0uayjju" path="res://assets/the dozens of random femboys for the shop/smash.png" id="21_sq6bu"]
+[ext_resource type="Texture2D" uid="uid://ijdp3vec4rk1" path="res://assets/the dozens of random femboys for the shop/mreaow.png" id="22_mkblt"]
+[ext_resource type="Texture2D" uid="uid://b0w06uxj5vncp" path="res://assets/the dozens of random femboys for the shop/ts_gay.png" id="23_4o3w1"]
+[ext_resource type="Texture2D" uid="uid://cemtd84wm23ba" path="res://assets/the dozens of random femboys for the shop/download.png" id="24_6ek7f"]
+[ext_resource type="Texture2D" uid="uid://do0ern05ifwr1" path="res://assets/the dozens of random femboys for the shop/segsy_guy.png" id="25_4qxv8"]
+[ext_resource type="Texture2D" uid="uid://pxpid05jpe1w" path="res://assets/the dozens of random femboys for the shop/double_pull.png" id="26_fq663"]
+[ext_resource type="Texture2D" uid="uid://bgk27j75etvud" path="res://assets/the dozens of random femboys for the shop/i_wish_i_could_look_like_bro.png" id="27_mniao"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_6k6j1"]
 shader = ExtResource("18_mo32q")
@@ -51,6 +58,13 @@ shader_parameter/strength = 0.365
 shader_parameter/fps = 6.0
 shader_parameter/noise = ExtResource("13_p7tei")
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_sq6bu"]
+shader = ExtResource("1_c00ee")
+shader_parameter/scale = Vector2(40, 40)
+shader_parameter/strength = 0.285
+shader_parameter/fps = 6.0
+shader_parameter/noise = ExtResource("13_p7tei")
+
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_n1psn")
 
@@ -75,15 +89,16 @@ autoplay = true
 
 [node name="shopBTN" type="TextureButton" parent="."]
 material = SubResource("ShaderMaterial_mo32q")
-offset_left = 1737.0001
-offset_top = 971.0
-offset_right = 1916.0001
-offset_bottom = 1074.0
+offset_left = 1741.0
+offset_top = 977.00006
+offset_right = 1920.0
+offset_bottom = 1080.0
 rotation = 0.0021059138
 texture_normal = ExtResource("5_2klcf")
 texture_pressed = ExtResource("6_nakos")
 texture_hover = ExtResource("7_jh32y")
 texture_focused = ExtResource("5_2klcf")
+metadata/_edit_use_anchors_ = true
 
 [node name="menuBTN" type="TextureButton" parent="."]
 material = SubResource("ShaderMaterial_mo32q")
@@ -96,6 +111,7 @@ texture_normal = ExtResource("8_be0no")
 texture_pressed = ExtResource("9_blm8a")
 texture_hover = ExtResource("10_blm8a")
 texture_disabled = ExtResource("8_be0no")
+metadata/_edit_use_anchors_ = true
 
 [node name="cookiee" type="TextureButton" parent="."]
 unique_name_in_owner = true
@@ -115,10 +131,10 @@ stream = ExtResource("13_gw3fx")
 
 [node name="clicks" type="Label" parent="."]
 material = ExtResource("14_c70he")
-offset_left = 825.0002
-offset_top = 148.18568
-offset_right = 1104.0002
-offset_bottom = 282.18567
+offset_left = 0.43804932
+offset_top = 148.7343
+offset_right = 1920.1956
+offset_bottom = 282.7343
 rotation = -0.00066534686
 theme_override_colors/font_color = Color(0.099985994, 0.099985994, 0.099985994, 1)
 theme_override_fonts/font = SubResource("SystemFont_n1psn")
@@ -129,10 +145,10 @@ vertical_alignment = 1
 
 [node name="cps" type="Label" parent="."]
 material = SubResource("ShaderMaterial_m335s")
-offset_left = 788.99994
-offset_top = 213.18568
-offset_right = 1140.0532
-offset_bottom = 347.18567
+offset_left = -1.0520935
+offset_top = 213.71135
+offset_right = 1920.9954
+offset_bottom = 347.71133
 rotation = -0.00066534686
 theme_override_colors/font_color = Color(0.099985994, 0.099985994, 0.099985994, 1)
 theme_override_fonts/font = SubResource("SystemFont_n1psn")
@@ -156,24 +172,75 @@ pitch_scale = 1.74
 
 [node name="repeater" type="HBoxContainer" parent="misc"]
 anchors_preset = -1
-anchor_left = -0.0015625
-anchor_top = 0.712963
-anchor_right = 0.91068393
-anchor_bottom = 0.9962963
-offset_left = -38.0
-offset_top = 47.0
-offset_right = -38.0
-offset_bottom = 47.0
-grow_horizontal = 2
+anchor_left = -0.0010460672
+anchor_top = 0.79565287
+anchor_right = 0.86881477
+anchor_bottom = 1.0201442
+offset_right = 0.45373535
+offset_bottom = -2.4835205
+grow_horizontal = 0
 rotation = 0.0014767582
-theme_override_constants/separation = -236
+size_flags_horizontal = 8
+size_flags_vertical = 6
+theme_override_constants/separation = -87
 metadata/_edit_use_anchors_ = true
 
 [node name="placeholder" type="TextureRect" parent="misc/repeater"]
-visible = false
+material = SubResource("ShaderMaterial_sq6bu")
 layout_mode = 2
 texture = ExtResource("20_m335s")
-expand_mode = 2
+expand_mode = 3
+
+[node name="placeholder2" type="TextureRect" parent="misc/repeater"]
+material = SubResource("ShaderMaterial_sq6bu")
+layout_mode = 2
+texture = ExtResource("21_sq6bu")
+expand_mode = 3
+stretch_mode = 5
+flip_h = true
+
+[node name="placeholder3" type="TextureRect" parent="misc/repeater"]
+material = SubResource("ShaderMaterial_sq6bu")
+layout_mode = 2
+size_flags_horizontal = 4
+texture = ExtResource("22_mkblt")
+expand_mode = 3
+
+[node name="placeholder4" type="TextureRect" parent="misc/repeater"]
+material = SubResource("ShaderMaterial_sq6bu")
+layout_mode = 2
+texture = ExtResource("23_4o3w1")
+expand_mode = 3
+stretch_mode = 5
+flip_h = true
+
+[node name="placeholder5" type="TextureRect" parent="misc/repeater"]
+material = SubResource("ShaderMaterial_sq6bu")
+layout_mode = 2
+texture = ExtResource("24_6ek7f")
+expand_mode = 3
+
+[node name="placeholder6" type="TextureRect" parent="misc/repeater"]
+material = SubResource("ShaderMaterial_sq6bu")
+layout_mode = 2
+texture = ExtResource("25_4qxv8")
+expand_mode = 3
+stretch_mode = 5
+flip_h = true
+
+[node name="placeholder7" type="TextureRect" parent="misc/repeater"]
+material = SubResource("ShaderMaterial_sq6bu")
+layout_mode = 2
+texture = ExtResource("26_fq663")
+expand_mode = 3
+
+[node name="placeholder8" type="TextureRect" parent="misc/repeater"]
+material = SubResource("ShaderMaterial_sq6bu")
+layout_mode = 2
+texture = ExtResource("27_mniao")
+expand_mode = 3
+stretch_mode = 5
+flip_h = true
 
 [node name="videos" type="Node" parent="."]
 
@@ -189,7 +256,11 @@ layout_mode = 2
 volume_db = -80.0
 loop = true
 
+[node name="Timer" type="Timer" parent="."]
+autostart = true
+
 [connection signal="pressed" from="shopBTN" to="." method="_on_shop_btn_pressed"]
 [connection signal="pressed" from="menuBTN" to="." method="_on_menu_btn_pressed"]
 [connection signal="button_down" from="cookiee" to="cookiee" method="_on_button_down"]
 [connection signal="button_up" from="cookiee" to="cookiee" method="_on_button_up"]
+[connection signal="timeout" from="Timer" to="cookiee" method="_on_timer_timeout"]

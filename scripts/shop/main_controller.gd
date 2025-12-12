@@ -182,7 +182,7 @@ func buy(item_name: String) -> bool:
 	match item_name:
 		"pointer":
 			pointer_owned = owned
-			pointer_price = int(pointer_price * 1.15)
+			pointer_price = int(pointer_price * 1.2)
 		"femboys":
 			femboys_owned = owned
 			femboys_price = int(femboys_price * 1.15)

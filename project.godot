@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="shorkyy"
-run/main_scene="uid://dl6bc7l6tovxu"
+run/main_scene="uid://cca2mm8miqi1l"
 config/features=PackedStringArray("4.5", "GL Compatibility")
 boot_splash/show_image=false
 boot_splash/use_filter=false
