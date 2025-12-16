@@ -17,6 +17,10 @@ boot_splash/show_image=false
 boot_splash/use_filter=false
 boot_splash/image="uid://dsgy1ro4deok1"
 
+[autoload]
+
+SettingsDataManager="*res://addons/modular-settings-menu/singletons/settings_data_manager.gd"
+
 [display]
 
 window/size/viewport_width=1920
@@ -26,7 +30,7 @@ window/size/resizable=false
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/godot_super-wakatime/plugin.cfg")
+enabled=PackedStringArray("res://addons/godot_super-wakatime/plugin.cfg", "res://addons/modular-settings-menu/plugin.cfg")
 
 [file_customization]
 

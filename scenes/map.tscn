@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=3 uid="uid://vt0ni10ua5di"]
+[gd_scene load_steps=25 format=3 uid="uid://vt0ni10ua5di"]
 
 [ext_resource type="AudioStream" uid="uid://b41a0gkk1ynpw" path="res://assets/Chilling At Nemu's Place.mp3" id="1_0cso3"]
 [ext_resource type="Shader" uid="uid://dlg8lpardycni" path="res://shaders/paper.gdshader" id="1_c00ee"]
@@ -19,14 +19,6 @@
 [ext_resource type="Material" uid="uid://rsbyyhr0bllh" path="res://shaders/paper.tres" id="14_c70he"]
 [ext_resource type="Shader" uid="uid://fvec0iwwupyw" path="res://shaders/that_black_circle_effect.gdshader" id="18_mo32q"]
 [ext_resource type="AudioStream" uid="uid://bmyx63o6cy3ai" path="res://assets/400 Sounds Pack/UI/pop_1.wav" id="19_6k6j1"]
-[ext_resource type="Texture2D" uid="uid://bwnuqm2w050f0" path="res://assets/the dozens of random femboys for the shop/wypher_ma_bou.png" id="20_m335s"]
-[ext_resource type="Texture2D" uid="uid://b264jm0uayjju" path="res://assets/the dozens of random femboys for the shop/smash.png" id="21_sq6bu"]
-[ext_resource type="Texture2D" uid="uid://ijdp3vec4rk1" path="res://assets/the dozens of random femboys for the shop/mreaow.png" id="22_mkblt"]
-[ext_resource type="Texture2D" uid="uid://b0w06uxj5vncp" path="res://assets/the dozens of random femboys for the shop/ts_gay.png" id="23_4o3w1"]
-[ext_resource type="Texture2D" uid="uid://cemtd84wm23ba" path="res://assets/the dozens of random femboys for the shop/download.png" id="24_6ek7f"]
-[ext_resource type="Texture2D" uid="uid://do0ern05ifwr1" path="res://assets/the dozens of random femboys for the shop/segsy_guy.png" id="25_4qxv8"]
-[ext_resource type="Texture2D" uid="uid://pxpid05jpe1w" path="res://assets/the dozens of random femboys for the shop/double_pull.png" id="26_fq663"]
-[ext_resource type="Texture2D" uid="uid://bgk27j75etvud" path="res://assets/the dozens of random femboys for the shop/i_wish_i_could_look_like_bro.png" id="27_mniao"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_6k6j1"]
 shader = ExtResource("18_mo32q")
@@ -55,13 +47,6 @@ font_names = PackedStringArray("Cursive")
 shader = ExtResource("1_c00ee")
 shader_parameter/scale = Vector2(1, 1)
 shader_parameter/strength = 0.365
-shader_parameter/fps = 6.0
-shader_parameter/noise = ExtResource("13_p7tei")
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_sq6bu"]
-shader = ExtResource("1_c00ee")
-shader_parameter/scale = Vector2(40, 40)
-shader_parameter/strength = 0.285
 shader_parameter/fps = 6.0
 shader_parameter/noise = ExtResource("13_p7tei")
 
@@ -167,85 +152,6 @@ pitch_scale = 1.74
 [node name="effects" type="Node" parent="."]
 
 [node name="pointers" type="Node" parent="."]
-
-[node name="misc" type="Node" parent="."]
-
-[node name="repeater" type="HBoxContainer" parent="misc"]
-anchors_preset = -1
-anchor_left = -0.0029029667
-anchor_top = 0.6171802
-anchor_right = 0.9034769
-anchor_bottom = 1.0915802
-offset_left = -0.2900262
-offset_top = -125.83649
-offset_right = 1044.5236
-offset_bottom = 39.498657
-rotation = 0.0014767582
-scale = Vector2(0.625, 0.625)
-pivot_offset = Vector2(0, 314.23)
-size_flags_horizontal = 3
-metadata/_edit_use_anchors_ = true
-
-[node name="placeholder" type="TextureRect" parent="misc/repeater"]
-material = SubResource("ShaderMaterial_sq6bu")
-layout_mode = 2
-texture = ExtResource("20_m335s")
-expand_mode = 1
-stretch_mode = 5
-
-[node name="placeholder2" type="TextureRect" parent="misc/repeater"]
-material = SubResource("ShaderMaterial_sq6bu")
-layout_mode = 2
-texture = ExtResource("21_sq6bu")
-expand_mode = 1
-stretch_mode = 5
-flip_h = true
-
-[node name="placeholder3" type="TextureRect" parent="misc/repeater"]
-material = SubResource("ShaderMaterial_sq6bu")
-layout_mode = 2
-size_flags_horizontal = 4
-texture = ExtResource("22_mkblt")
-expand_mode = 1
-stretch_mode = 5
-
-[node name="placeholder4" type="TextureRect" parent="misc/repeater"]
-material = SubResource("ShaderMaterial_sq6bu")
-layout_mode = 2
-texture = ExtResource("23_4o3w1")
-expand_mode = 1
-stretch_mode = 5
-flip_h = true
-
-[node name="placeholder5" type="TextureRect" parent="misc/repeater"]
-material = SubResource("ShaderMaterial_sq6bu")
-layout_mode = 2
-texture = ExtResource("24_6ek7f")
-expand_mode = 1
-stretch_mode = 5
-
-[node name="placeholder6" type="TextureRect" parent="misc/repeater"]
-material = SubResource("ShaderMaterial_sq6bu")
-layout_mode = 2
-texture = ExtResource("25_4qxv8")
-expand_mode = 1
-stretch_mode = 5
-flip_h = true
-
-[node name="placeholder7" type="TextureRect" parent="misc/repeater"]
-material = SubResource("ShaderMaterial_sq6bu")
-layout_mode = 2
-texture = ExtResource("26_fq663")
-expand_mode = 1
-stretch_mode = 5
-
-[node name="placeholder8" type="TextureRect" parent="misc/repeater"]
-material = SubResource("ShaderMaterial_sq6bu")
-layout_mode = 2
-texture = ExtResource("27_mniao")
-expand_mode = 1
-stretch_mode = 5
-flip_h = true
 
 [node name="videos" type="Node" parent="."]
 

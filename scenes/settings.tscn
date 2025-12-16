@@ -1,0 +1,40 @@
+[gd_scene load_steps=4 format=3 uid="uid://bkhv8mne48auy"]
+
+[ext_resource type="Shader" uid="uid://fvec0iwwupyw" path="res://shaders/that_black_circle_effect.gdshader" id="1_5p8wc"]
+[ext_resource type="Theme" uid="uid://cfjkf5p04rhx3" path="res://scenes/theme.tres" id="1_r6d6q"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_r6d6q"]
+shader = ExtResource("1_5p8wc")
+shader_parameter/vignette_intensity = 2.14
+shader_parameter/vignette_opacity = 0.0090000004275
+shader_parameter/vignette_rgb = Color(0, 0, 0, 1)
+
+[node name="Settings" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_r6d6q")
+
+[node name="BG" type="Node" parent="."]
+
+[node name="ColorRect" type="ColorRect" parent="BG"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -202.0
+offset_top = -110.0
+offset_right = 198.0
+offset_bottom = 129.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(1, 1, 0.88235295, 1)
+
+[node name="vignette" type="ColorRect" parent="BG"]
+material = SubResource("ShaderMaterial_r6d6q")
+offset_left = -25.0
+offset_top = -21.0
+offset_right = 1961.0
+offset_bottom = 1136.0
