@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://vt0ni10ua5di"]
+[gd_scene load_steps=30 format=3 uid="uid://vt0ni10ua5di"]
 
 [ext_resource type="AudioStream" uid="uid://b41a0gkk1ynpw" path="res://assets/Chilling At Nemu's Place.mp3" id="1_0cso3"]
 [ext_resource type="Shader" uid="uid://dlg8lpardycni" path="res://shaders/paper.gdshader" id="1_c00ee"]
@@ -19,6 +19,7 @@
 [ext_resource type="Material" uid="uid://rsbyyhr0bllh" path="res://shaders/paper.tres" id="14_c70he"]
 [ext_resource type="Shader" uid="uid://fvec0iwwupyw" path="res://shaders/that_black_circle_effect.gdshader" id="18_mo32q"]
 [ext_resource type="AudioStream" uid="uid://bmyx63o6cy3ai" path="res://assets/400 Sounds Pack/UI/pop_1.wav" id="19_6k6j1"]
+[ext_resource type="PackedScene" uid="uid://cr4sxngq1dsro" path="res://scenes/sidebar.tscn" id="20_m335s"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_6k6j1"]
 shader = ExtResource("18_mo32q")
@@ -50,10 +51,72 @@ shader_parameter/strength = 0.365
 shader_parameter/fps = 6.0
 shader_parameter/noise = ExtResource("13_p7tei")
 
-[node name="Node2D" type="Node2D"]
+[sub_resource type="Animation" id="Animation_m335s"]
+resource_name = "sidebar_slide_in"
+length = 0.6785
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sidebar:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5859212),
+"transitions": PackedFloat32Array(0.34151018, 0.34151018),
+"update": 0,
+"values": [Vector2(-545.545, 0), Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_sq6bu"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sidebar:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-545.545, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_4b7dj"]
+resource_name = "sidebar_slide_out"
+length = 0.6785
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sidebar:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.53333336),
+"transitions": PackedFloat32Array(0.34151018, 0.34151018),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(-545.545, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_4b7dj"]
+_data = {
+&"RESET": SubResource("Animation_sq6bu"),
+&"sidebar_slide_in": SubResource("Animation_m335s"),
+&"sidebar_slide_out": SubResource("Animation_4b7dj")
+}
+
+[node name="Node2D" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 script = ExtResource("1_n1psn")
+metadata/_edit_use_anchors_ = true
 
 [node name="bg" type="ColorRect" parent="."]
+layout_mode = 0
 offset_left = -24.0
 offset_top = -21.0
 offset_right = 1943.0
@@ -63,6 +126,7 @@ color = Color(1, 1, 0.88235295, 1)
 
 [node name="vignette" type="ColorRect" parent="."]
 material = SubResource("ShaderMaterial_6k6j1")
+layout_mode = 0
 offset_left = -25.0
 offset_top = -21.0
 offset_right = 1924.0
@@ -74,6 +138,7 @@ autoplay = true
 
 [node name="shopBTN" type="TextureButton" parent="."]
 material = SubResource("ShaderMaterial_mo32q")
+layout_mode = 0
 offset_left = 1741.0
 offset_top = 977.00006
 offset_right = 1920.0
@@ -87,6 +152,7 @@ metadata/_edit_use_anchors_ = true
 
 [node name="menuBTN" type="TextureButton" parent="."]
 material = SubResource("ShaderMaterial_mo32q")
+layout_mode = 0
 offset_left = 1737.0
 offset_top = 2.0
 offset_right = 1916.0
@@ -101,6 +167,7 @@ metadata/_edit_use_anchors_ = true
 [node name="cookiee" type="TextureButton" parent="."]
 unique_name_in_owner = true
 material = ExtResource("14_c70he")
+layout_mode = 0
 offset_left = 670.0
 offset_top = 237.00003
 offset_right = 1282.0
@@ -116,6 +183,7 @@ stream = ExtResource("13_gw3fx")
 
 [node name="clicks" type="Label" parent="."]
 material = ExtResource("14_c70he")
+layout_mode = 0
 offset_left = 0.43804932
 offset_top = 148.7343
 offset_right = 1920.1956
@@ -130,6 +198,7 @@ vertical_alignment = 1
 
 [node name="cps" type="Label" parent="."]
 material = SubResource("ShaderMaterial_m335s")
+layout_mode = 0
 offset_left = -1.0520935
 offset_top = 213.71135
 offset_right = 1920.9954
@@ -149,29 +218,30 @@ stream = ExtResource("19_6k6j1")
 volume_db = -5.473
 pitch_scale = 1.74
 
-[node name="effects" type="Node" parent="."]
-
-[node name="pointers" type="Node" parent="."]
-
-[node name="videos" type="Node" parent="."]
-
-[node name="VBoxContainer" type="VBoxContainer" parent="videos"]
-anchors_preset = -1
-anchor_right = 0.18541667
-anchor_bottom = 0.83148146
-metadata/_edit_use_anchors_ = true
-
-[node name="placeholder" type="VideoStreamPlayer" parent="videos/VBoxContainer"]
-visible = false
-layout_mode = 2
-volume_db = -80.0
-loop = true
-
 [node name="Timer" type="Timer" parent="."]
 autostart = true
+
+[node name="Sidebar" parent="." instance=ExtResource("20_m335s")]
+layout_mode = 1
+anchor_left = -0.23714063
+anchor_right = 0.0765625
+offset_left = -90.234985
+offset_right = -90.234924
+grow_horizontal = 1
+grow_vertical = 1
+pivot_offset = Vector2(0, 540)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_4b7dj")
+}
 
 [connection signal="pressed" from="shopBTN" to="." method="_on_shop_btn_pressed"]
 [connection signal="pressed" from="menuBTN" to="." method="_on_menu_btn_pressed"]
 [connection signal="button_down" from="cookiee" to="cookiee" method="_on_button_down"]
 [connection signal="button_up" from="cookiee" to="cookiee" method="_on_button_up"]
 [connection signal="timeout" from="Timer" to="cookiee" method="_on_timer_timeout"]
+[connection signal="mouse_entered" from="Sidebar/content" to="." method="_on_content_mouse_entered"]
+[connection signal="mouse_exited" from="Sidebar/content" to="." method="_on_content_mouse_exited"]
+
+[editable path="Sidebar"]

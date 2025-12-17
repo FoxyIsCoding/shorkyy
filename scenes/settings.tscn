@@ -17,6 +17,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("1_r6d6q")
+metadata/_edit_horizontal_guides_ = [-137.0]
 
 [node name="BG" type="Node" parent="."]
 

@@ -1,0 +1,64 @@
+[gd_scene load_steps=6 format=3 uid="uid://cr4sxngq1dsro"]
+
+[ext_resource type="Texture2D" uid="uid://c8m73f0i2txk8" path="res://assets/my majestic art made in MS paint lol/buttons ig/the majestic exit-close button/close.png" id="1_26ftg"]
+[ext_resource type="Texture2D" uid="uid://c3m2nt4h2ncsg" path="res://assets/my majestic art made in MS paint lol/buttons ig/the majestic exit-close button/close_pressed.png" id="2_nexdq"]
+[ext_resource type="Texture2D" uid="uid://dyx2q4yen2jwh" path="res://assets/my majestic art made in MS paint lol/buttons ig/the majestic exit-close button/close_hover.png" id="3_pu38c"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7dxfm"]
+bg_color = Color(0.90071243, 0.88609594, 0.8464946, 1)
+corner_radius_top_right = 40
+corner_radius_bottom_right = 40
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_26ftg"]
+bg_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 40
+corner_radius_top_right = 40
+corner_radius_bottom_right = 40
+corner_radius_bottom_left = 40
+
+[node name="sidebar" type="Control"]
+layout_mode = 3
+anchor_right = 0.25
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="content" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 20.0
+offset_bottom = -20.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_7dxfm")
+
+[node name="content2" type="Panel" parent="content"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.9583333
+anchor_top = 0.077884614
+anchor_right = 0.98333335
+anchor_bottom = 0.94519234
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_26ftg")
+metadata/_edit_use_anchors_ = true
+
+[node name="closeBTN" type="TextureButton" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.8541667
+anchor_top = 0.037962962
+anchor_right = 0.93291664
+anchor_bottom = 0.073481485
+offset_right = 97.20001
+offset_bottom = 98.64
+scale = Vector2(0.28, 0.28)
+texture_normal = ExtResource("1_26ftg")
+texture_pressed = ExtResource("2_nexdq")
+texture_hover = ExtResource("3_pu38c")
+metadata/_edit_use_anchors_ = true
