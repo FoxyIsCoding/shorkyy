@@ -1,4 +1,4 @@
-[gd_scene load_steps=35 format=3 uid="uid://vt0ni10ua5di"]
+[gd_scene load_steps=31 format=3 uid="uid://vt0ni10ua5di"]
 
 [ext_resource type="AudioStream" uid="uid://b41a0gkk1ynpw" path="res://assets/Chilling At Nemu's Place.mp3" id="1_0cso3"]
 [ext_resource type="Shader" uid="uid://dlg8lpardycni" path="res://shaders/paper.gdshader" id="1_c00ee"]
@@ -21,7 +21,6 @@
 [ext_resource type="Texture2D" uid="uid://b5hiixsrc38av" path="res://assets/the dozens of random femboys for the shop/description-cursor-icon-with-shadow-32.png" id="18_sq6bu"]
 [ext_resource type="AudioStream" uid="uid://bmyx63o6cy3ai" path="res://assets/400 Sounds Pack/UI/pop_1.wav" id="19_6k6j1"]
 [ext_resource type="Texture2D" uid="uid://bgk27j75etvud" path="res://assets/the dozens of random femboys for the shop/i_wish_i_could_look_like_bro.png" id="20_m335s"]
-[ext_resource type="Texture2D" uid="uid://cpcfhjdvukkiq" path="res://assets/the dozens of random femboys for the shop/fdf9684820ef959faff402a259a84435-removebg-preview.png" id="22_4b7dj"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_6k6j1"]
 shader = ExtResource("18_mo32q")
@@ -70,60 +69,6 @@ _data = {
 &"sidebar_slide_in": SubResource("Animation_m335s"),
 &"sidebar_slide_out": SubResource("Animation_4b7dj")
 }
-
-[sub_resource type="Shader" id="Shader_4b7dj"]
-code = "shader_type canvas_item;
-render_mode world_vertex_coords;
-
-group_uniforms Squiggle;
-/**
- * Noise texture scale
- * By default, the noise texture's size in world coordinates is set by its resolution
-*/
-uniform vec2 scale = vec2(1.0);
-uniform float strength = 1.0;
-/**
- * Number of squiggle frames per second
-*/
-uniform float fps = 6.0;
-uniform sampler2D noise : filter_linear, repeat_enable;
-group_uniforms;
-
-varying vec4 modulate;
-varying vec2 noise_uv;
-
-void vertex() {
-	modulate = COLOR;
-
-	// Use world coordinates for scale-independent squiggles, offset by position to keep pattern attached to object
-	noise_uv = (VERTEX - MODEL_MATRIX[3].xy) / (vec2(textureSize(noise, 0)) * scale);
-}
-
-// Use irrational constants for unique squiggles every frame
-#define offset_multiplier vec2(PI, E)
-
-void fragment() {
-	vec2 noise_offset = vec2(floor(TIME * fps)) * offset_multiplier;
-	float noise_sample = texture(noise, noise_uv + noise_offset).r * 4.0 * PI;
-	vec2 direction = vec2(cos(noise_sample), sin(noise_sample));
-	vec2 squiggle_uv = UV + direction * strength * 0.005;
-
-	COLOR = texture(TEXTURE, squiggle_uv) * modulate;
-}"
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_2cfcp"]
-shader = SubResource("Shader_4b7dj")
-shader_parameter/scale = Vector2(1, 1)
-shader_parameter/strength = 0.255
-shader_parameter/fps = 6.0
-shader_parameter/noise = ExtResource("13_p7tei")
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_y2ir2"]
-shader = SubResource("Shader_4b7dj")
-shader_parameter/scale = Vector2(1, 1)
-shader_parameter/strength = 0.155
-shader_parameter/fps = 6.0
-shader_parameter/noise = ExtResource("13_p7tei")
 
 [node name="Node2D" type="Control"]
 layout_mode = 3
@@ -211,9 +156,9 @@ stream = ExtResource("13_gw3fx")
 material = ExtResource("14_c70he")
 layout_mode = 0
 offset_left = 0.43804932
-offset_top = 29.7343
+offset_top = 148.7343
 offset_right = 1920.1956
-offset_bottom = 163.73431
+offset_bottom = 282.7343
 rotation = -0.00066534686
 theme_override_colors/font_color = Color(0.099985994, 0.099985994, 0.099985994, 1)
 theme_override_fonts/font = SubResource("SystemFont_n1psn")
@@ -225,10 +170,10 @@ vertical_alignment = 1
 [node name="cps" type="Label" parent="."]
 material = SubResource("ShaderMaterial_m335s")
 layout_mode = 0
-offset_left = -1.0520934
-offset_top = 94.71135
+offset_left = -1.0520935
+offset_top = 213.71135
 offset_right = 1920.9954
-offset_bottom = 228.71133
+offset_bottom = 347.71133
 rotation = -0.00066534686
 theme_override_colors/font_color = Color(0.099985994, 0.099985994, 0.099985994, 1)
 theme_override_fonts/font = SubResource("SystemFont_n1psn")
@@ -255,7 +200,7 @@ libraries = {
 [node name="femboy" type="Node" parent="."]
 
 [node name="femboy" type="TextureRect" parent="femboy"]
-material = SubResource("ShaderMaterial_2cfcp")
+material = ExtResource("14_c70he")
 anchors_preset = -1
 anchor_left = -0.036979165
 anchor_top = 0.599074
@@ -268,7 +213,7 @@ texture = ExtResource("20_m335s")
 metadata/_edit_use_anchors_ = true
 
 [node name="femboyCount" type="Label" parent="femboy"]
-material = SubResource("ShaderMaterial_y2ir2")
+material = ExtResource("14_c70he")
 anchors_preset = -1
 anchor_left = 0.1109375
 anchor_top = 0.73888886
@@ -279,40 +224,6 @@ offset_bottom = -86.207275
 rotation = 1.3060718
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "0 Femboys"
-metadata/_edit_use_anchors_ = true
-
-[node name="blahaj" type="Node" parent="."]
-
-[node name="blahaj" type="TextureRect" parent="blahaj"]
-material = SubResource("ShaderMaterial_2cfcp")
-anchors_preset = -1
-anchor_left = 0.26424497
-anchor_top = 0.54795367
-anchor_right = 0.40029004
-anchor_bottom = 1.0379778
-offset_left = -186.35046
-offset_top = 216.21002
-offset_right = 272.96887
-offset_bottom = 632.6544
-rotation = 0.26548395
-scale = Vector2(0.31, 0.31)
-texture = ExtResource("22_4b7dj")
-metadata/_edit_use_anchors_ = true
-
-[node name="blahajCount" type="Label" parent="blahaj"]
-material = SubResource("ShaderMaterial_y2ir2")
-anchors_preset = -1
-anchor_left = 0.1109375
-anchor_top = 0.73888886
-anchor_right = 0.112388484
-anchor_bottom = 0.843624
-offset_left = 165.0
-offset_top = 115.00006
-offset_right = 272.11658
-offset_bottom = 28.792786
-rotation = -0.57156074
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-text = "0 Blahaj's"
 metadata/_edit_use_anchors_ = true
 
 [connection signal="pressed" from="shopBTN" to="." method="_on_shop_btn_pressed"]

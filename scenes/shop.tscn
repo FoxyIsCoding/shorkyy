@@ -64,7 +64,7 @@ texture_margin_bottom = 2.0
 axis_stretch_horizontal = 2
 axis_stretch_vertical = 2
 
-[node name="Shop" type="Control" node_paths=PackedStringArray("pointer_object", "pointer_price_object", "femboys_object", "femboys_price_object", "golden_cookie_object", "golden_cookie_price_object", "blahaj_object", "blahaj_price_object", "useless_coin_object", "useless_coin_price_object")]
+[node name="Shop" type="Control" node_paths=PackedStringArray("pointer_object", "pointer_price_object", "femboys_object", "femboys_price_object", "golden_cookie_object", "golden_cookie_price_object", "blahaj_object", "blahaj_price_object", "useless_coin_object", "useless_coin_price_object", "dvd_price_object", "subway_surfers_price_object", "slime_price_object", "lofi_price_object")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -83,6 +83,10 @@ blahaj_object = NodePath("HBoxContainer2/4")
 blahaj_price_object = NodePath("HBoxContainer2/4/box/price")
 useless_coin_object = NodePath("HBoxContainer2/5")
 useless_coin_price_object = NodePath("HBoxContainer2/5/box/price")
+dvd_price_object = NodePath("extra/horizontal_container/dvd/HBoxContainer/box/price")
+subway_surfers_price_object = NodePath("extra/horizontal_container/subway_surfers/HBoxContainer/box/price")
+slime_price_object = NodePath("extra/horizontal_container/slime/HBoxContainer/box/price")
+lofi_price_object = NodePath("extra/horizontal_container/lofi/HBoxContainer/box/price")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 layout_mode = 1
@@ -758,6 +762,10 @@ pitch_scale = 1.74
 [connection signal="mouse_entered" from="HBoxContainer2/5/useless_coin" to="." method="useless_coin_mouse_enter"]
 [connection signal="pressed" from="HBoxContainer2/5/useless_coin" to="." method="_on_useless_coin_pressed"]
 [connection signal="mouse_entered" from="extra/horizontal_container/dvd/dvd" to="." method="dvd_mouse_enter"]
+[connection signal="pressed" from="extra/horizontal_container/dvd/dvd" to="." method="_on_dvd_pressed"]
 [connection signal="mouse_entered" from="extra/horizontal_container/subway_surfers/subway_surfers" to="." method="subway_surfers_mouse_enter"]
+[connection signal="pressed" from="extra/horizontal_container/subway_surfers/subway_surfers" to="." method="_on_subway_surfers_pressed"]
 [connection signal="mouse_entered" from="extra/horizontal_container/slime/slime" to="." method="slime_mouse_enter"]
+[connection signal="pressed" from="extra/horizontal_container/slime/slime" to="." method="_on_slime_pressed"]
 [connection signal="mouse_entered" from="extra/horizontal_container/lofi/lofi" to="." method="lofi_mouse_enter"]
+[connection signal="pressed" from="extra/horizontal_container/lofi/lofi" to="." method="_on_lofi_pressed"]

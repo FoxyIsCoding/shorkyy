@@ -358,6 +358,21 @@ func _on_blahaj_pressed():
 func _on_useless_coin_pressed():
 	buy("useless_coin")
 
+
+func _on_dvd_pressed():
+	buy("dvd")
+
+
+func _on_subway_surfers_pressed():
+	buy("subway_surfers")
+
+func _on_slime_pressed():
+	buy("slime")
+
+
+func _on_lofi_pressed():
+	buy("lofi")
+
 func _on_close_btn_pressed():
 	$audio/button.play()
 	get_tree().change_scene_to_file("res://scenes/map.tscn")
