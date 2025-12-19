@@ -19,6 +19,8 @@ boot_splash/image="uid://dsgy1ro4deok1"
 
 [autoload]
 
+Debugger="*res://scripts/debugger.gd"
+Audiomanager="*res://scenes/audiomanager.tscn"
 SettingsDataManager="*res://addons/modular-settings-menu/singletons/settings_data_manager.gd"
 
 [display]

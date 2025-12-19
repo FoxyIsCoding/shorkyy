@@ -169,7 +169,7 @@ func buy(item_name: String) -> bool:
 	if clicks < price or not sale:
 		ui_shake(ui_root) 
 		$audio/buy_fail.play()
-		print("Not enough clicks for ", item_name)
+		Debugger.debug("[color=red][b]Game Report", "Not enough clicks for " + item_name)
 		return false
 
 	# --------------------------------------------------------------------
@@ -257,7 +257,7 @@ static func save_shop():
 		}
 		save_file.store_line(JSON.stringify(save_data))
 		save_file.close()
-		print("Game saved!")
+		Debugger.debug("Game Report", "Saved")
 #endregion
 
 #region LOAD SAVE
@@ -308,9 +308,9 @@ static func load_stats():
 			slime_price = save_data.get("slime_price", slime_price)
 			lofi_price = save_data.get("lofi_price", lofi_price)
 			cps = pointer_owned
-			print("=== GAME LOADED ===")
+			print_rich("[color=#4d8699][b]=== SAVE LOADED ===[/b]")
 			print("Clicks: ", clicks)
-			print("--- OWNED ITEMS ---")
+			print_rich("[color=#4d8699][b]--- OWNED ITEMS ---[/b]")
 			print("Pointer: ", pointer_owned)
 			print("Femboys: ", femboys_owned)
 			print("Golden Cookie: ", golden_cookie_owned)
@@ -320,7 +320,7 @@ static func load_stats():
 			print("Subway Surfers: ", subway_surfers_owned)
 			print("Slime: ", slime_owned)
 			print("Lofi Girl: ", lofi_owned)
-			print("--- ITEM PRICES ---")
+			print_rich("[color=#4d8699][b]--- ITEM PRICES ---[/b]")
 			print("Pointer Price: ", pointer_price)
 			print("Femboys Price: ", femboys_price)
 			print("Golden Cookie Price: ", golden_cookie_price)
@@ -330,7 +330,7 @@ static func load_stats():
 			print("Subway Surfers Price: ", subway_surfers_price)
 			print("Slime Price: ", slime_price)
 			print("Lofi Girl Price: ", lofi_price)
-			print("===================")
+			print_rich("[color=#4d8699][b]===================[/b]")
 #endregion
 
 # --------------------------------------------------------------------------

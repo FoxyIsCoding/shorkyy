@@ -1,8 +1,9 @@
 extends Control
 var controller = load("res://scripts/shop/main_controller.gd")
+var debugger = load("res://scripts/debugger.gd")
 func _ready():
 	$cps.text = str(controller.pointer_owned) + "CPS"
-
+	load_inventory()
 
 func _on_shop_btn_pressed():
 	controller.save_shop()
@@ -14,3 +15,17 @@ func _on_menu_btn_pressed():
 	$audio/button.play()
 	get_tree().change_scene_to_file("res://scenes/menu.tscn")
 		   
+
+func load_inventory():
+	if controller.femboys_owned > 0:
+		# visibility stuff
+		$femboy/femboy.visible = true
+		$femboy/femboyCount.visible = true
+		# text or whatever
+		$femboy/femboyCount.text = str(controller.femboys_owned) + " Femboys"
+	if controller.blahaj_owned > 0:
+		# visibility stuff
+		$blahaj/blahaj.visible = true
+		$blahaj/blahajCount.visible = true
+		# umm that text ye :3
+		$blahaj/blahajCount.text = str(controller.blahaj_owned) + " Blahaj's"

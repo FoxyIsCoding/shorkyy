@@ -1,10 +1,9 @@
-[gd_scene load_steps=29 format=4 uid="uid://dl6bc7l6tovxu"]
+[gd_scene load_steps=28 format=4 uid="uid://dl6bc7l6tovxu"]
 
 [ext_resource type="Script" uid="uid://bdk4tr0tsjmc1" path="res://scripts/menu/button_controller.gd" id="1_con2f"]
 [ext_resource type="Texture2D" uid="uid://00ijnwkvi8im" path="res://assets/UI/arrow_thingy.png" id="1_yqeox"]
 [ext_resource type="Shader" uid="uid://dlg8lpardycni" path="res://shaders/paper.gdshader" id="2_g3eks"]
 [ext_resource type="Shader" uid="uid://fvec0iwwupyw" path="res://shaders/that_black_circle_effect.gdshader" id="2_v86rl"]
-[ext_resource type="AudioStream" uid="uid://b41a0gkk1ynpw" path="res://assets/Chilling At Nemu's Place.mp3" id="2_vjb58"]
 [ext_resource type="Texture2D" uid="uid://crhgifogudbdj" path="res://assets/noise.jpg" id="3_v86rl"]
 [ext_resource type="Material" uid="uid://rsbyyhr0bllh" path="res://shaders/paper.tres" id="4_13sgg"]
 [ext_resource type="AudioStream" uid="uid://bmyx63o6cy3ai" path="res://assets/400 Sounds Pack/UI/pop_1.wav" id="8_13sgg"]
@@ -1232,11 +1231,6 @@ theme_override_styles/hover = SubResource("StyleBoxEmpty_vjb58")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_g3eks")
 text = "exit :c"
 flat = true
-
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("2_vjb58")
-autoplay = true
-parameters/looping = true
 
 [node name="audio" type="Node" parent="."]
 

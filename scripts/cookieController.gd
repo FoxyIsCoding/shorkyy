@@ -41,12 +41,11 @@ func _ready():
 	$"../cps".text = str(controller.cps) + "CPS"
 	$"../clicks".text = str(controller.clicks)
 	pointer_count = controller.cps
-	print("CPS:" + str(controller.cps))
-	print("CPS but real fr" + str(pointer_count))
 	
 	# pointer ahh thing
 	
 	create_pointers()
+	set_as_top_level(true)
 	
 
 
@@ -86,19 +85,20 @@ func _on_button_up():
 func _on_tween_done():
 	pass
 
+
 func create_pointers():
-	# Clear existing pointers
 	for pointer in pointers:
 		pointer.queue_free()
 	pointers.clear()
 	
-	# Create new pointers
 	for i in range(pointer_count):
 		var pointer = TextureRect.new()
 		pointer.texture = pointer_texture
 		pointer.custom_minimum_size = pointer_size
 		pointer.stretch_mode = TextureRect.STRETCH_KEEP_ASPECT_CENTERED
-		pointer.pivot_offset = pointer_size / 2  # Rotate around center
+		pointer.pivot_offset = pointer_size / 2 
+		pointer.z_index = 100 
+		pointer.top_level = true 
 		
 		add_child(pointer)
 		pointers.append(pointer)
@@ -106,23 +106,17 @@ func create_pointers():
 func _process(delta):
 	if target_button == null or pointers.is_empty():
 		return
-	
 	time_elapsed += delta
+	var button_rect = target_button.get_global_rect()
+	var button_center = button_rect.position + (button_rect.size / 2)
 	
-	# Get the center of the button
-	var button_center = target_button.global_position + (target_button.size / 2)
-	
-	# Update each pointer
 	for i in range(pointers.size()):
 		var pointer = pointers[i]
 		
-		# Calculate angle for this pointer (evenly distributed + rotation over time)
 		var angle_offset = (TAU / pointer_count) * i
 		var final_angle = angle_offset + (rotation_speed * time_elapsed)
 		
-		# Position pointer around the button center
 		var offset = Vector2(cos(final_angle), sin(final_angle)) * distance_from_target
 		pointer.global_position = button_center + offset - (pointer_size / 2)
 		
-		# Rotate pointer to point inward towards the button (or outward)
-		pointer.rotation = final_angle + PI  # Point inward, use +0 for outward
+		pointer.rotation = final_angle + PI
