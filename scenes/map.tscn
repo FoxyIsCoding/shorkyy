@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=3 uid="uid://vt0ni10ua5di"]
+[gd_scene load_steps=31 format=3 uid="uid://vt0ni10ua5di"]
 
 [ext_resource type="Shader" uid="uid://dlg8lpardycni" path="res://shaders/paper.gdshader" id="1_c00ee"]
 [ext_resource type="Script" uid="uid://bttb6324wix73" path="res://scripts/game/button_controller.gd" id="1_n1psn"]
@@ -16,6 +16,7 @@
 [ext_resource type="Shader" uid="uid://fvec0iwwupyw" path="res://shaders/that_black_circle_effect.gdshader" id="18_mo32q"]
 [ext_resource type="Texture2D" uid="uid://b5hiixsrc38av" path="res://assets/the dozens of random femboys for the shop/description-cursor-icon-with-shadow-32.png" id="18_sq6bu"]
 [ext_resource type="AudioStream" uid="uid://bmyx63o6cy3ai" path="res://assets/400 Sounds Pack/UI/pop_1.wav" id="19_6k6j1"]
+[ext_resource type="Texture2D" uid="uid://5awofc040qlr" path="res://assets/the dozens of random femboys for the shop/coin.png" id="19_m335s"]
 [ext_resource type="Texture2D" uid="uid://bgk27j75etvud" path="res://assets/the dozens of random femboys for the shop/i_wish_i_could_look_like_bro.png" id="20_m335s"]
 [ext_resource type="Texture2D" uid="uid://cpcfhjdvukkiq" path="res://assets/the dozens of random femboys for the shop/fdf9684820ef959faff402a259a84435-removebg-preview.png" id="22_4b7dj"]
 
@@ -136,10 +137,10 @@ color = Color(1, 1, 0.88235295, 1)
 [node name="vignette" type="ColorRect" parent="."]
 material = SubResource("ShaderMaterial_6k6j1")
 layout_mode = 0
-offset_left = -25.0
-offset_top = -21.0
-offset_right = 1924.0
-offset_bottom = 1088.0
+offset_left = -15.0
+offset_top = 1.0
+offset_right = 1934.0
+offset_bottom = 1110.0
 
 [node name="shopBTN" type="TextureButton" parent="."]
 material = SubResource("ShaderMaterial_mo32q")
@@ -184,6 +185,7 @@ size_flags_horizontal = 4
 size_flags_vertical = 4
 texture_normal = ExtResource("11_mlgqr")
 script = ExtResource("12_wslke")
+rotate_amount = 0.0
 pointer_texture = ExtResource("18_sq6bu")
 target_button = NodePath(".")
 distance_from_target = 330.0
@@ -304,6 +306,41 @@ offset_bottom = 28.792786
 rotation = -0.57156074
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "0 Blahaj's"
+metadata/_edit_use_anchors_ = true
+
+[node name="useless coin" type="Node" parent="."]
+
+[node name="coins" type="TextureRect" parent="useless coin"]
+visible = false
+material = SubResource("ShaderMaterial_2cfcp")
+anchors_preset = -1
+anchor_left = 0.13122511
+anchor_top = 0.7046296
+anchor_right = 0.21682237
+anchor_bottom = 0.8655529
+offset_top = 6.1035156e-05
+offset_right = 843.01355
+offset_bottom = 458.20288
+rotation = 0.17012143
+scale = Vector2(0.19, 0.227)
+texture = ExtResource("19_m335s")
+metadata/_edit_use_anchors_ = true
+
+[node name="coinCount" type="Label" parent="useless coin"]
+visible = false
+material = SubResource("ShaderMaterial_y2ir2")
+anchors_preset = -1
+anchor_left = 0.15570426
+anchor_top = 0.70462966
+anchor_right = 0.20709567
+anchor_bottom = 0.75590336
+offset_right = 11.230957
+offset_bottom = -28.468872
+rotation = 0.2713095
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "0 Coin"
+horizontal_alignment = 1
+vertical_alignment = 1
 metadata/_edit_use_anchors_ = true
 
 [connection signal="pressed" from="shopBTN" to="." method="_on_shop_btn_pressed"]

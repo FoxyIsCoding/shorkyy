@@ -29,3 +29,9 @@ func load_inventory():
 		$blahaj/blahajCount.visible = true
 		# umm that text ye :3
 		$blahaj/blahajCount.text = str(controller.blahaj_owned) + " Blahaj's"
+	if controller.useless_coin_owned > 0:
+		# visibility stuff
+		$"useless coin/coins".visible = true
+		$"useless coin/coinCount".visible = true
+		# umm that text ye :3
+		$"useless coin/coinCount".text = str(controller.useless_coin_owned) + " Coins's"

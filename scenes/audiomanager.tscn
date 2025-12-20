@@ -1,8 +1,10 @@
-[gd_scene load_steps=2 format=3 uid="uid://hlcoj4jx2qnw"]
+[gd_scene load_steps=3 format=3 uid="uid://hlcoj4jx2qnw"]
 
+[ext_resource type="Script" uid="uid://dyp8ypi3ekmjm" path="res://scripts/audiocontroller.gd" id="1_ab2wy"]
 [ext_resource type="AudioStream" uid="uid://b41a0gkk1ynpw" path="res://assets/Chilling At Nemu's Place.mp3" id="1_exa1w"]
 
 [node name="Audiomanager" type="Node"]
+script = ExtResource("1_ab2wy")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("1_exa1w")

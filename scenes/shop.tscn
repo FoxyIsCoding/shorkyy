@@ -530,6 +530,7 @@ anchor_right = 0.9817296
 anchor_bottom = 0.92
 grow_horizontal = 2
 grow_vertical = 2
+pivot_offset = Vector2(528, 0)
 metadata/_edit_use_anchors_ = true
 
 [node name="box" type="VBoxContainer" parent="extra/horizontal_container/dvd/HBoxContainer"]
@@ -567,7 +568,8 @@ anchors_preset = -1
 anchor_left = 0.2140625
 anchor_top = 0.30555555
 anchor_right = 0.7859375
-anchor_bottom = 0.43425927
+anchor_bottom = 0.43796295
+pivot_offset = Vector2(549, 0)
 metadata/_edit_use_anchors_ = true
 
 [node name="subway_surfers" type="Panel" parent="extra/horizontal_container"]
