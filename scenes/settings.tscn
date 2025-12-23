@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://bkhv8mne48auy"]
+[gd_scene load_steps=6 format=3 uid="uid://bkhv8mne48auy"]
 
 [ext_resource type="Shader" uid="uid://fvec0iwwupyw" path="res://shaders/that_black_circle_effect.gdshader" id="1_5p8wc"]
 [ext_resource type="Theme" uid="uid://cfjkf5p04rhx3" path="res://scenes/theme.tres" id="1_r6d6q"]
@@ -8,6 +8,12 @@ shader = ExtResource("1_5p8wc")
 shader_parameter/vignette_intensity = 2.14
 shader_parameter/vignette_opacity = 0.0090000004275
 shader_parameter/vignette_rgb = Color(0, 0, 0, 1)
+
+[sub_resource type="SystemFont" id="SystemFont_r6d6q"]
+font_names = PackedStringArray("Cursive")
+
+[sub_resource type="SystemFont" id="SystemFont_6wm04"]
+font_names = PackedStringArray("Cursive")
 
 [node name="Settings" type="Control"]
 layout_mode = 3
@@ -19,9 +25,8 @@ grow_vertical = 2
 theme = ExtResource("1_r6d6q")
 metadata/_edit_horizontal_guides_ = [-137.0]
 
-[node name="BG" type="Node" parent="."]
-
-[node name="ColorRect" type="ColorRect" parent="BG"]
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -33,9 +38,73 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(1, 1, 0.88235295, 1)
 
-[node name="vignette" type="ColorRect" parent="BG"]
+[node name="vignette" type="ColorRect" parent="."]
 material = SubResource("ShaderMaterial_r6d6q")
+layout_mode = 0
 offset_left = -25.0
 offset_top = -21.0
 offset_right = 1961.0
 offset_bottom = 1136.0
+
+[node name="volume knob" type="Node" parent="."]
+
+[node name="Label2" type="Label" parent="volume knob"]
+anchors_preset = -1
+anchor_left = 0.08177083
+anchor_top = 0.15462963
+anchor_right = 0.23333333
+anchor_bottom = 0.20555556
+offset_left = -1.0
+offset_top = 70.0
+offset_right = -1.0
+offset_bottom = 72.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = SubResource("SystemFont_r6d6q")
+theme_override_font_sizes/font_size = 40
+text = "Enable Music:"
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="volume knob"]
+anchors_preset = -1
+anchor_left = 0.08177083
+anchor_top = 0.15462963
+anchor_right = 0.23333333
+anchor_bottom = 0.20555556
+offset_top = -1.0
+offset_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = SubResource("SystemFont_r6d6q")
+theme_override_font_sizes/font_size = 40
+text = "Volume:"
+metadata/_edit_use_anchors_ = true
+
+[node name="HSlider" type="HSlider" parent="volume knob"]
+anchors_preset = -1
+anchor_left = 0.17447917
+anchor_top = 0.15648147
+anchor_right = 0.52610415
+anchor_bottom = 0.2128796
+offset_right = -384.12
+offset_bottom = -34.65567
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(2.32, 2.32)
+theme = ExtResource("1_r6d6q")
+ticks_position = 3
+metadata/_edit_use_anchors_ = true
+
+[node name="CheckButton" type="CheckButton" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.21822914
+anchor_top = 0.21203703
+anchor_right = 0.24635415
+anchor_bottom = 0.24987528
+scale = Vector2(1.93, 1.93)
+theme_override_fonts/font = SubResource("SystemFont_6wm04")
+theme_override_font_sizes/font_size = 15
+metadata/_edit_use_anchors_ = true

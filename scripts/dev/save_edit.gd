@@ -9,6 +9,8 @@ extends Window
 var save_files: Array[String] = []
 var save_data: Dictionary = {}
 
+var Reloader = load("res://scripts/dev/reload.gd")
+
 var is_dragging: bool = false
 var drag_offset: Vector2 = Vector2.ZERO
 
@@ -30,7 +32,7 @@ func _ready() -> void:
 func open_save_editor() -> void:
 	visible = true
 	size = Vector2(800, 600)
-	position = get_viewport().get_visible_rect().size / 2.0 - size / 2.0
+	position = get_viewport().get_visible_rect().size / 2.0 - size / 2.0 / 5
 	load_save_files()
 
 
@@ -275,7 +277,10 @@ func save_file(filename: String) -> void:
 	var json_string: String = JSON.stringify(data, "  ")
 	file.store_string(json_string)
 	file.close()
+	Reloader.reload()
+	Reload.reload()
 	print("Saved: %s" % filename)
+	
 
 
 func _on_close_button_pressed() -> void:

@@ -1,14 +1,14 @@
 extends Node
 
-var enabled: bool = true
-var volume: int = 80
+static var enabled: bool = true
+static var volume: int = 80
 
 func _ready():
 	Debugger.debug_badge("AudioManager initialized")
 	load_settings()
 	apply_audio_settings()
 
-func load_settings():
+static func load_settings():
 	if not FileAccess.file_exists("user://settings.save"):
 		Debugger.debug("AudioManager", "No settings file found, creating with defaults")
 		save_settings() 
@@ -42,7 +42,7 @@ func apply_audio_settings():
 	else:
 		Debugger.debug_error("audiomanager.gd - AudioStreamPlayer not found!")
 
-func save_settings():
+static func save_settings():
 	var save_data = {
 		"enabled": enabled,
 		"volume": volume

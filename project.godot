@@ -23,6 +23,7 @@ Debugger="*res://scripts/debugger.gd"
 Audiomanager="*res://scenes/audiomanager.tscn"
 SettingsDataManager="*res://addons/modular-settings-menu/singletons/settings_data_manager.gd"
 SaveEditor="*res://scenes/dev/saveeditor.tscn"
+Reload="*res://scripts/dev/reload.gd"
 
 [display]
 
