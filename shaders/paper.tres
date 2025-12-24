@@ -1,6 +1,6 @@
 [gd_resource type="ShaderMaterial" load_steps=3 format=3 uid="uid://rsbyyhr0bllh"]
 
-[ext_resource type="Texture2D" uid="uid://crhgifogudbdj" path="res://assets/noise.jpg" id="2_sapf2"]
+[ext_resource type="Texture2D" uid="uid://bivdcjj1clse8" path="res://assets/noise.jpg" id="2_sapf2"]
 
 [sub_resource type="Shader" id="Shader_4b7dj"]
 code = "shader_type canvas_item;

@@ -36,7 +36,6 @@ func open_save_editor() -> void:
 	load_save_files()
 
 
-
 func _process(_delta: float) -> void:
 	if Input.is_action_just_pressed("devmenu"):
 		if visible:
@@ -166,11 +165,38 @@ func build_editor_recursive(
 			container.add_child(line_edit)
 
 
+func parse_value(text: String) -> Variant:
+	
+	var trimmed := text.strip_edges()
+	
+
+	if trimmed.to_lower() == "true":
+		return true
+	if trimmed.to_lower() == "false":
+		return false
+	
+
+	if trimmed.to_lower() == "null":
+		return null
+	
+
+	if trimmed.is_valid_int():
+		return int(trimmed)
+	
+
+	if trimmed.is_valid_float():
+		return float(trimmed)
+	
+
+	return text
+
+
 func on_value_changed(path: String, new_value: String, filename: String) -> void:
 	var data: Variant = save_data[filename]
+	var parsed_value: Variant = parse_value(new_value)
 
 	if path == "":
-		save_data[filename] = new_value
+		save_data[filename] = parsed_value
 		_refresh_raw_editor_for_file(filename)
 		return
 
@@ -190,9 +216,9 @@ func on_value_changed(path: String, new_value: String, filename: String) -> void
 	if last.begins_with("[") and last.ends_with("]"):
 		var idx_str2: String = last.substr(1, last.length() - 2)
 		var idx2: int = int(idx_str2)
-		current[idx2] = new_value
+		current[idx2] = parsed_value
 	else:
-		current[last] = new_value
+		current[last] = parsed_value
 
 	save_data[filename] = data
 	_refresh_raw_editor_for_file(filename)
@@ -235,6 +261,18 @@ func _on_raw_editor_changed() -> void:
 		return
 
 	save_data[current_raw_filename] = json.data
+	
+	# Rebuild the current tab to reflect raw editor changes
+	var current_idx := tab_container.current_tab
+	if current_idx >= 0 and current_idx < save_files.size():
+		var filename := save_files[current_idx]
+		var current_tab := tab_container.get_child(current_idx)
+		if current_tab:
+			current_tab.queue_free()
+			tab_container.remove_child(current_tab)
+			
+		create_save_tab(filename)
+		tab_container.current_tab = current_idx
 
 
 func _input(event: InputEvent) -> void:
@@ -280,7 +318,6 @@ func save_file(filename: String) -> void:
 	Reloader.reload()
 	Reload.reload()
 	print("Saved: %s" % filename)
-	
 
 
 func _on_close_button_pressed() -> void:

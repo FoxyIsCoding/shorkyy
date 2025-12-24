@@ -11,7 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://dsgy1ro4deok1" path="res://assets/my majestic art made in MS paint lol/cookiee.png" id="11_mlgqr"]
 [ext_resource type="Script" uid="uid://c4pwpnlqt2fpb" path="res://scripts/cookieController.gd" id="12_wslke"]
 [ext_resource type="AudioStream" uid="uid://vkihgn375fyy" path="res://assets/400 Sounds Pack/UI/sci_fi_hover_high.wav" id="13_gw3fx"]
-[ext_resource type="Texture2D" uid="uid://crhgifogudbdj" path="res://assets/noise.jpg" id="13_p7tei"]
+[ext_resource type="Texture2D" uid="uid://bivdcjj1clse8" path="res://assets/noise.jpg" id="13_p7tei"]
 [ext_resource type="Material" uid="uid://rsbyyhr0bllh" path="res://shaders/paper.tres" id="14_c70he"]
 [ext_resource type="Shader" uid="uid://fvec0iwwupyw" path="res://shaders/that_black_circle_effect.gdshader" id="18_mo32q"]
 [ext_resource type="Texture2D" uid="uid://b5hiixsrc38av" path="res://assets/the dozens of random femboys for the shop/description-cursor-icon-with-shadow-32.png" id="18_sq6bu"]
@@ -200,9 +200,9 @@ stream = ExtResource("13_gw3fx")
 material = ExtResource("14_c70he")
 layout_mode = 0
 offset_left = 0.43804932
-offset_top = 29.7343
+offset_top = 5.7342978
 offset_right = 1920.1956
-offset_bottom = 163.73431
+offset_bottom = 139.73431
 rotation = -0.00066534686
 theme_override_colors/font_color = Color(0.099985994, 0.099985994, 0.099985994, 1)
 theme_override_fonts/font = SubResource("SystemFont_n1psn")
@@ -213,18 +213,22 @@ vertical_alignment = 1
 
 [node name="cps" type="Label" parent="."]
 material = SubResource("ShaderMaterial_m335s")
-layout_mode = 0
-offset_left = -1.0520934
-offset_top = 94.71135
-offset_right = 1920.9954
-offset_bottom = 228.71133
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.0010416672
+anchor_top = 0.14629628
+anchor_right = 1.0000709
+anchor_bottom = 0.26918623
+offset_top = -24.0
+offset_right = -0.08874512
+offset_bottom = -22.72113
 rotation = -0.00066534686
 theme_override_colors/font_color = Color(0.099985994, 0.099985994, 0.099985994, 1)
 theme_override_fonts/font = SubResource("SystemFont_n1psn")
 theme_override_font_sizes/font_size = 32
-text = "0 CPS"
+text = "0 CPS
+ 0% boost"
 horizontal_alignment = 1
-vertical_alignment = 1
 
 [node name="audio" type="Node" parent="."]
 
