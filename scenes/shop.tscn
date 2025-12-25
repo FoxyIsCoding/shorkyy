@@ -10,7 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://7w17uuum0dsg" path="res://assets/my majestic art made in MS paint lol/ui art/box.png" id="6_8r1wq"]
 [ext_resource type="Shader" uid="uid://dlg8lpardycni" path="res://shaders/paper.gdshader" id="6_44xle"]
 [ext_resource type="Texture2D" uid="uid://dbwe23oknjkvd" path="res://assets/my majestic art made in MS paint lol/ui art/box_recommended.png" id="6_ajxib"]
-[ext_resource type="Texture2D" uid="uid://crhgifogudbdj" path="res://assets/noise.jpg" id="7_24it5"]
+[ext_resource type="Texture2D" uid="uid://bivdcjj1clse8" path="res://assets/noise.jpg" id="7_24it5"]
 [ext_resource type="Texture2D" uid="uid://cvs8gppnfrfps" path="res://assets/my majestic art made in MS paint lol/ui art/box_recommended_new.png" id="7_y6sft"]
 [ext_resource type="AudioStream" uid="uid://rqjpq6gdovj" path="res://assets/400 Sounds Pack/UI/cancel.wav" id="13_7mqwv"]
 [ext_resource type="AudioStream" uid="uid://c0valxrffh8lb" path="res://assets/400 Sounds Pack/UI/pop_4.wav" id="14_7mqwv"]
@@ -552,6 +552,14 @@ theme_override_fonts/font = SubResource("SystemFont_y6sft")
 theme_override_font_sizes/font_size = 16
 text = "100 cookies"
 
+[node name="owned" type="Label" parent="extra/horizontal_container/dvd/HBoxContainer/box"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = SubResource("SystemFont_y6sft")
+theme_override_font_sizes/font_size = 10
+text = "0 Owned"
+vertical_alignment = 1
+
 [node name="desc" type="Label" parent="extra/horizontal_container/dvd/HBoxContainer/box"]
 custom_minimum_size = Vector2(24.665, 5.205)
 layout_mode = 2
@@ -607,6 +615,14 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = SubResource("SystemFont_y6sft")
 theme_override_font_sizes/font_size = 16
 text = "200 cookies"
+
+[node name="owned" type="Label" parent="extra/horizontal_container/subway_surfers/HBoxContainer/box"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = SubResource("SystemFont_y6sft")
+theme_override_font_sizes/font_size = 10
+text = "0 Owned"
+vertical_alignment = 1
 
 [node name="desc" type="Label" parent="extra/horizontal_container/subway_surfers/HBoxContainer/box"]
 custom_minimum_size = Vector2(24.665, 5.205)
@@ -664,6 +680,14 @@ theme_override_fonts/font = SubResource("SystemFont_y6sft")
 theme_override_font_sizes/font_size = 16
 text = "200  cookies"
 
+[node name="owned" type="Label" parent="extra/horizontal_container/slime/HBoxContainer/box"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = SubResource("SystemFont_y6sft")
+theme_override_font_sizes/font_size = 10
+text = "0 Owned"
+vertical_alignment = 1
+
 [node name="desc" type="Label" parent="extra/horizontal_container/slime/HBoxContainer/box"]
 custom_minimum_size = Vector2(24.665, 5.205)
 layout_mode = 2
@@ -718,6 +742,14 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = SubResource("SystemFont_y6sft")
 theme_override_font_sizes/font_size = 16
 text = "500 cookies"
+
+[node name="owned" type="Label" parent="extra/horizontal_container/lofi/HBoxContainer/box"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = SubResource("SystemFont_y6sft")
+theme_override_font_sizes/font_size = 10
+text = "0 Owned"
+vertical_alignment = 1
 
 [node name="desc" type="Label" parent="extra/horizontal_container/lofi/HBoxContainer/box"]
 custom_minimum_size = Vector2(24.665, 5.205)

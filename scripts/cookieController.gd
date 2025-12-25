@@ -31,14 +31,16 @@ var controller = load("res://scripts/shop/main_controller.gd")
 var cps = controller.pointer_owned
 
 
-
+var boost
+var boost_multiplier = 1.0
+var boost_percentage = (boost_multiplier - 1.0) * 100
 #funcs 
 func _ready():
 	original_scale = scale
 	original_rotation = rotation
 	controller.load_stats()
-	$"../cps".text = str(cps) + "CPS"
-	$"../cps".text = str(controller.cps) + "CPS"
+	boost_calc()
+	$"../cps".text = str(controller.cps) + "CPS \n+" + str(int(boost_percentage)) + "% Boost"
 	$"../clicks".text = str(controller.clicks)
 	pointer_count = controller.cps
 	
@@ -52,14 +54,15 @@ func _ready():
 func _on_timer_timeout() -> void:
 	controller.clicks += controller.pointer_owned
 	$"../clicks".text = str(controller.clicks)
-	$"../cps".text = str(controller.cps) + "CPS"
+	boost_calc()
+	$"../cps".text = str(controller.cps) + "CPS \n+" + str(int(boost_percentage)) + "% Boost"
 
 
 func _on_button_down():
-	$"../cps".text = str(controller.cps) + "CPS"
 	$"poper umm soun thingy".play(0)
+	boost_calc()
 	
-	controller.clicks += 1
+	controller.clicks += 1 * boost
 	if controller.clicks % 10 == 0:
 		controller.save_shop()
 	
@@ -73,6 +76,7 @@ func _on_button_down():
 	tween.tween_property(self, "rotation", original_rotation + rotate_amount, tween_duration)
 	tween.tween_callback(_on_tween_done)
 	$"../clicks".text = str(controller.clicks)
+	
 
 func _on_button_up():
 	if tween:
@@ -120,3 +124,16 @@ func _process(delta):
 		pointer.global_position = button_center + offset - (pointer_size / 2)
 		
 		pointer.rotation = final_angle + PI
+
+
+func boost_calc():
+	var entries = [controller.femboys_owned, controller.blahaj_owned, controller.useless_coin_owned]
+	var entry_value = [1.03, 1.01, 1.09]
+	
+	boost_multiplier = 1.0  
+	
+	for i in range(entries.size()):
+		boost_multiplier *= pow(entry_value[i], entries[i])
+	
+	boost = boost_multiplier 
+	boost_percentage = (boost_multiplier - 1.0) * 100

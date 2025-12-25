@@ -190,7 +190,7 @@ pointer_texture = ExtResource("18_sq6bu")
 target_button = NodePath(".")
 distance_from_target = 330.0
 rotation_speed = 0.4
-pointer_size = Vector2(4, 4)
+pointer_size = Vector2(3, 3)
 metadata/_edit_use_anchors_ = true
 
 [node name="poper umm soun thingy" type="AudioStreamPlayer" parent="cookiee"]
@@ -200,9 +200,9 @@ stream = ExtResource("13_gw3fx")
 material = ExtResource("14_c70he")
 layout_mode = 0
 offset_left = 0.43804932
-offset_top = 5.7342978
+offset_top = -19.265703
 offset_right = 1920.1956
-offset_bottom = 139.73431
+offset_bottom = 114.734314
 rotation = -0.00066534686
 theme_override_colors/font_color = Color(0.099985994, 0.099985994, 0.099985994, 1)
 theme_override_fonts/font = SubResource("SystemFont_n1psn")
@@ -219,13 +219,13 @@ anchor_left = -0.0010416672
 anchor_top = 0.14629628
 anchor_right = 1.0000709
 anchor_bottom = 0.26918623
-offset_top = -24.0
+offset_top = -49.000015
 offset_right = -0.08874512
-offset_bottom = -22.72113
+offset_bottom = -47.72113
 rotation = -0.00066534686
 theme_override_colors/font_color = Color(0.099985994, 0.099985994, 0.099985994, 1)
 theme_override_fonts/font = SubResource("SystemFont_n1psn")
-theme_override_font_sizes/font_size = 32
+theme_override_font_sizes/font_size = 29
 text = "0 CPS
  0% boost"
 horizontal_alignment = 1
