@@ -17,7 +17,6 @@ var drag_offset: Vector2 = Vector2.ZERO
 var current_raw_filename: String = ""
 var is_updating_raw_from_code: bool = false
 
-
 func _ready() -> void:
 	set_flag(Window.FLAG_ALWAYS_ON_TOP, true)
 
@@ -28,13 +27,11 @@ func _ready() -> void:
 
 	load_save_files()
 
-
 func open_save_editor() -> void:
 	visible = true
 	size = Vector2(800, 600)
 	position = get_viewport().get_visible_rect().size / 2.0 - size / 2.0 / 5
 	load_save_files()
-
 
 func _process(_delta: float) -> void:
 	if Input.is_action_just_pressed("devmenu"):
@@ -42,7 +39,6 @@ func _process(_delta: float) -> void:
 			visible = false
 		else:
 			open_save_editor()
-
 
 func load_save_files() -> void:
 	for child in tab_container.get_children():
@@ -73,7 +69,6 @@ func load_save_files() -> void:
 	else:
 		_clear_raw_editor()
 
-
 func parse_save_file(filename: String) -> void:
 	var path: String = "user://%s" % filename
 	if not FileAccess.file_exists(path):
@@ -97,7 +92,6 @@ func parse_save_file(filename: String) -> void:
 			[json.get_error_message(), json.get_error_line()]
 		}
 
-
 func create_save_tab(filename: String) -> void:
 	var tab := ScrollContainer.new()
 	tab.name = filename.get_basename()
@@ -110,7 +104,6 @@ func create_save_tab(filename: String) -> void:
 
 	var data: Variant = save_data.get(filename, {})
 	build_editor_recursive(editor_container, data, "", filename)
-
 
 func build_editor_recursive(
 		container: Container,
@@ -164,32 +157,25 @@ func build_editor_recursive(
 			)
 			container.add_child(line_edit)
 
-
 func parse_value(text: String) -> Variant:
-	
+
 	var trimmed := text.strip_edges()
-	
 
 	if trimmed.to_lower() == "true":
 		return true
 	if trimmed.to_lower() == "false":
 		return false
-	
 
 	if trimmed.to_lower() == "null":
 		return null
-	
 
 	if trimmed.is_valid_int():
 		return int(trimmed)
-	
 
 	if trimmed.is_valid_float():
 		return float(trimmed)
-	
 
 	return text
-
 
 func on_value_changed(path: String, new_value: String, filename: String) -> void:
 	var data: Variant = save_data[filename]
@@ -223,14 +209,12 @@ func on_value_changed(path: String, new_value: String, filename: String) -> void
 	save_data[filename] = data
 	_refresh_raw_editor_for_file(filename)
 
-
 func _on_tab_changed(tab_idx: int) -> void:
 	if tab_idx < 0 or tab_idx >= save_files.size():
 		_clear_raw_editor()
 		return
 	var filename: String = save_files[tab_idx]
 	_refresh_raw_editor_for_file(filename)
-
 
 func _refresh_raw_editor_for_file(filename: String) -> void:
 	current_raw_filename = filename
@@ -240,13 +224,11 @@ func _refresh_raw_editor_for_file(filename: String) -> void:
 	raw_editor.text = json_string
 	is_updating_raw_from_code = false
 
-
 func _clear_raw_editor() -> void:
 	current_raw_filename = ""
 	is_updating_raw_from_code = true
 	raw_editor.text = ""
 	is_updating_raw_from_code = false
-
 
 func _on_raw_editor_changed() -> void:
 	if is_updating_raw_from_code:
@@ -261,8 +243,7 @@ func _on_raw_editor_changed() -> void:
 		return
 
 	save_data[current_raw_filename] = json.data
-	
-	# Rebuild the current tab to reflect raw editor changes
+
 	var current_idx := tab_container.current_tab
 	if current_idx >= 0 and current_idx < save_files.size():
 		var filename := save_files[current_idx]
@@ -270,10 +251,9 @@ func _on_raw_editor_changed() -> void:
 		if current_tab:
 			current_tab.queue_free()
 			tab_container.remove_child(current_tab)
-			
+
 		create_save_tab(filename)
 		tab_container.current_tab = current_idx
-
 
 func _input(event: InputEvent) -> void:
 	if not visible:
@@ -295,13 +275,11 @@ func _input(event: InputEvent) -> void:
 		var new_pos: Vector2 = global_pos2 - drag_offset
 		position = Vector2i(new_pos)
 
-
 func _on_save_button_pressed() -> void:
 	if save_files.is_empty():
 		return
 	var filename: String = save_files[tab_container.current_tab]
 	save_file(filename)
-
 
 func save_file(filename: String) -> void:
 	var path: String = "user://%s" % filename
@@ -318,7 +296,6 @@ func save_file(filename: String) -> void:
 	Reloader.reload()
 	Reload.reload()
 	print("Saved: %s" % filename)
-
 
 func _on_close_button_pressed() -> void:
 	visible = false
