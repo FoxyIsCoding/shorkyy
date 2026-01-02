@@ -127,13 +127,24 @@ func _process(delta):
 
 
 func boost_calc():
-	var entries = [controller.femboys_owned, controller.blahaj_owned, controller.useless_coin_owned]
-	var entry_value = [1.03, 1.01, 1.09]
+	var entries = [
+		controller.pointer_owned,
+		controller.femboys_owned,
+		controller.golden_cookie_owned,
+		controller.blahaj_owned,
+		controller.useless_coin_owned,
+		controller.dvd_owned,
+		controller.subway_surfers_owned,
+		controller.slime_owned,
+		controller.lofi_owned
+	]
+	var entry_value = [1.03, 1.01, 1.09, 1.05, 1.02, 1.04, 1.06, 1.07, 1.10] 
 	
 	boost_multiplier = 1.0  
 	
 	for i in range(entries.size()):
-		boost_multiplier *= pow(entry_value[i], entries[i])
+		if i < entry_value.size():
+			boost_multiplier *= pow(entry_value[i], entries[i])
 	
 	boost = boost_multiplier 
 	boost_percentage = (boost_multiplier - 1.0) * 100

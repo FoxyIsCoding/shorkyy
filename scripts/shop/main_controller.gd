@@ -108,6 +108,13 @@ func load_owned():
 	$"HBoxContainer2/3/box/owned".text = str(golden_cookie_owned) + "  Owned"
 	$"HBoxContainer2/2/box/owned".text = str(femboys_owned) + "  Owned"
 	$"HBoxContainer2/1/box/owned".text = str(pointer_owned) + "  Owned"
+	
+	# extra
+	$"extra/horizontal_container/dvd/HBoxContainer/box/owned".text = str(dvd_owned) + "  Owned"
+	$"extra/horizontal_container/subway_surfers/HBoxContainer/box/owned".text = str(subway_surfers_owned) + "  Owned"
+	$"extra/horizontal_container/slime/HBoxContainer/box/owned".text = str(slime_owned) + "  Owned"
+	$"extra/horizontal_container/lofi/HBoxContainer/box/owned".text = str(lofi_owned) + "  Owned"
+
 #endregion
 
 # --------------------------------------------------------------------------
